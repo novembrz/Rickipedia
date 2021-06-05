@@ -1,0 +1,29 @@
+PODS:
+  - Kingfisher (6.3.0)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - Kingfisher (from `https://github.com/onevcat/Kingfisher.git`)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  Kingfisher:
+    :git: https://github.com/onevcat/Kingfisher.git
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  Kingfisher:
+    :commit: e30efd82368276664b9ffb8a10dc29cd6a6810da
+    :git: https://github.com/onevcat/Kingfisher.git
+  SwiftyJSON:
+    :commit: b3dcd7dbd0d488e1a7077cb33b00f2083e382f07
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 4b71819446457d0b434a4f27fb1f9af524e87174
+
+COCOAPODS: 1.10.1
