@@ -11,22 +11,19 @@ import SwiftUI
 struct HomeView: View {
     
     @State var selectedTab = "house"
+    @State var isMenuOpen = false
     
     var body: some View {
         VStack(spacing: 10) {
-            HomeHeaderView()
+            HeaderView(title: "ALL CHARACTERS", isPerformed: $isMenuOpen)
             CarouselBlock()
             Spacer()
             
             ZStack(alignment: .bottom) {
                 CustomTabBar(selectedTab: $selectedTab)
             }
-            
         }
-        .foregroundColor(.white)
-        .background(Color("GrayBgColor"))
-        .edgesIgnoringSafeArea(.all)
-        
+        .viewSettings()
     }
 }
 
