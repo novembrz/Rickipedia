@@ -17,7 +17,8 @@ struct SearchBarView: View {
             HStack {
                 TextField("Rick Sanchez", text: $searchText)
                     .colorInvert()
-                    .accentColor(Color("accentGreen"))
+                    .foregroundColor(.black)
+                    .accentColor(Color("accentPink"))
                     .padding(.leading, 28)
                     .frame(height: 10)
             }
@@ -27,6 +28,7 @@ struct SearchBarView: View {
             .onTapGesture {
                 isSearching = true
             }
+            //MARK: Xmark Search
             .overlay(
                 HStack {
                     Image(systemName: "magnifyingglass")
@@ -47,6 +49,7 @@ struct SearchBarView: View {
             .transition(.move(edge: .trailing))
             .animation(.easeOut)
             
+            //MARK: Cancel
             if isSearching {
                 Button {
                     isSearching = false
@@ -68,6 +71,6 @@ struct SearchBarView: View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(viewModel: SearchViewModel())
     }
 }

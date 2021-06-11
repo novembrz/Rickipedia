@@ -7,12 +7,19 @@
 
 import SwiftUI
 
-var array = ["Ann", "Anton", "Figma", "Fillip", ]
+var array = ["Ann Ann Ann Ann Ann", "Anton", "Figma", "Fillip"]
+
+
+final class SearchViewModel: ObservableObject {
+    var filterCategories = ["person", "marsian", "planet", "starship"]
+}
 
 struct SearchView: View {
     @State var searchText = ""
     @State var isSearching = false
     @State var isMenuOpen = false
+    
+    @ObservedObject var viewModel: SearchViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {
@@ -21,20 +28,10 @@ struct SearchView: View {
             SearchBarView(searchText: $searchText, isSearching: $isSearching)
             
             if isMenuOpen {
-                FilterMenuView()
+                FilterMenuView(categories: $viewModel.filterCategories)
             }
 
-            ScrollView(.vertical, showsIndicators: false) {
-                ForEach((array).filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.self) { object in
-                    HStack {
-                        Text("\(object)")
-                        Spacer()
-                    }
-                    .padding(.vertical)
-                }
-            }
-            .animation(.easeIn)
-            .transition(.move(edge: .top))
+            CardsView(searchText: $searchText)
         }
         .viewSettings()
     }
@@ -43,6 +40,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(viewModel: SearchViewModel())
     }
 }

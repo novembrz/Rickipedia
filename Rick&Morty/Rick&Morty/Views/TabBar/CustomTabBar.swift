@@ -20,8 +20,6 @@ struct CustomTabBar: View {
             TabBarButtons(image: "eye", selectedTab: $selectedTab, tabPoints: $tabPoints)
             TabBarButtons(image: "suit.heart", selectedTab: $selectedTab, tabPoints: $tabPoints)
             TabBarButtons(image: "person", selectedTab: $selectedTab, tabPoints: $tabPoints)
-
-            
         }
         .padding()
         .background(

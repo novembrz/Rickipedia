@@ -15,7 +15,8 @@ struct HomeView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            HeaderView(title: "ALL CHARACTERS", isPerformed: $isMenuOpen)
+            HeaderView(title: "RICKIPEDIA", isPerformed: $isMenuOpen)
+            Spacer()
             CarouselBlock()
             Spacer()
             

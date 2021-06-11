@@ -82,3 +82,10 @@ func calculateWidth() -> CGFloat {
     return screen - (2 * 30)
 }
 var height = UIScreen.main.bounds.height / 1.8
+
+
+struct CarouselBlock_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
+}

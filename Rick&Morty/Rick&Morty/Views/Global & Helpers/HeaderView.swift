@@ -15,7 +15,7 @@ struct HeaderView: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.title)
+                .font(.largeTitle)
                 .fontWeight(.heavy)
 
             Spacer()
@@ -29,5 +29,11 @@ struct HeaderView: View {
                     .foregroundColor(.white)
             }
         }
+    }
+}
+
+struct HeaderView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
     }
 }
