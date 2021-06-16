@@ -1,13 +1,12 @@
 //
-//  CarouselView.swift
+//  Home.swift
 //  Rick&Morty
 //
-//  Created by dasha on 21.05.2021.
+//  Created by dasha on 16.06.2021.
 //
 
 import SwiftUI
 
-//MARK: CarouselView
 struct HomeView: View {
     
     @State var selectedTab = "house"
@@ -20,15 +19,15 @@ struct HomeView: View {
             CarouselBlock()
             Spacer()
             
-            ZStack(alignment: .bottom) {
-                CustomTabBar(selectedTab: $selectedTab)
-            }
+//            ZStack(alignment: .bottom) {
+//                CustomTabBar(selectedTab: $selectedTab)
+//            }
         }
         .viewSettings()
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct Home_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }

@@ -18,13 +18,12 @@ struct FilterMenuView: View {
         HStack(spacing: 22) {
             ForEach(categories, id: \.self) { item in
                 Button {
-                    selctedCategory = item
+                    selctedCategory == item ? (selctedCategory = "") : (selctedCategory = item)
                 } label: {
                     Image(item)
                         .resizable()
                         .frame(width: 45, height: 45)
                 }
-                
                 .frame(maxWidth: .infinity)
                 .frame(height: 73)
                 .background(selctedCategory == item ? AnyView(linerGradient.opacity(0.8)) : AnyView(Color.gray.opacity(0.3)))
@@ -33,6 +32,12 @@ struct FilterMenuView: View {
         }
         .animation(.easeIn)
         .transition(.move(edge: .top))
+        .onAppear() {
+            switch selctedCategory {
+            
+            default: break
+            }
+        }
     }
 }
 

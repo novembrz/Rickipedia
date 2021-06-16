@@ -14,8 +14,8 @@ struct SearchBarView: View {
     
     var body: some View {
         HStack {
-            HStack {
-                TextField("Rick Sanchez", text: $searchText)
+            HStack { //MARK: Search TF
+                TextField(randomString(), text: $searchText)
                     .colorInvert()
                     .foregroundColor(.black)
                     .accentColor(Color("accentPink"))
@@ -28,7 +28,7 @@ struct SearchBarView: View {
             .onTapGesture {
                 isSearching = true
             }
-            //MARK: Xmark Search
+            //MARK: Xmark & Search
             .overlay(
                 HStack {
                     Image(systemName: "magnifyingglass")
@@ -60,12 +60,17 @@ struct SearchBarView: View {
                     Text("Cancel")
                         .foregroundColor(Color("accentGreen"))
                         .padding(.trailing)
-                        .padding(.leading, 0)
+                        .padding(.leading, 10)
                 }
                 .transition(.move(edge: .trailing))
                 .animation(.easeOut)
             }
         }
+    }
+    
+    func randomString() -> String {
+        let words = ["Evil Beth Clone", "Venzenulon 7", "Gromflom Prime", "Rick D. Sanchez III", "Birdperson", "Cowboy Morty", "Fascist Mr. President", "Unity", "Earth (C-137)"]
+        return words.randomElement()!
     }
 }
 

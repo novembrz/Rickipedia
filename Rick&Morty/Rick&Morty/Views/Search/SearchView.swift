@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-var array = ["Ann Ann Ann Ann Ann", "Anton", "Figma", "Fillip"]
-
-
 final class SearchViewModel: ObservableObject {
     var filterCategories = ["person", "marsian", "planet", "starship"]
 }

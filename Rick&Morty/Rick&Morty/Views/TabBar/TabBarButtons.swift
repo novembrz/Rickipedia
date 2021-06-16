@@ -10,6 +10,9 @@ import SwiftUI
 
 struct TabBarButtons: View {
     
+//    @StateObject var viewRouter: Router
+//    let assignedPage: Page
+    
     var image: String
     @Binding var selectedTab: String
     @Binding var tabPoints: [CGFloat]
@@ -40,6 +43,9 @@ struct TabBarButtons: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .contentShape(Rectangle())//maxFrame
+//                .onTapGesture {
+//                    viewRouter.currentPage = assignedPage
+//                }
 //                .sheet(isPresented: $shouldShowModal) {
 //                    ScrollView {
 //                        Text("TEST")

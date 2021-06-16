@@ -45,40 +45,39 @@ struct NetworkService {
     //MARK: Decode
     
     static func decodeAllJSON<T>(type: T.Type, from: Data?) -> T? {
-        var persons: [Person] = []
-        
         guard let data = from else { return nil }
         guard let json = try? JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers) else {return nil}
-        
-        let arrayNames = json["results"].arrayValue
-        
-        for i in 0..<7 {
-            let name = arrayNames[i]["name"].stringValue
-            let id = arrayNames[i]["id"].intValue
-            let image = arrayNames[i]["image"].stringValue
-            
-            persons.append(Person(index: i, name: name, id: id, image: image))
-        }
+        let persons = personsAppend(from: json["results"].arrayValue, count: 20)
         
         return persons as? T
     }
     
     static func decodeRandomJSON<T>(type: T.Type, from: Data?) -> T? {
-        var persons: [Person] = []
-        
         guard let data = from else { return nil }
         guard let json = try? JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers) else {return nil}
-        
-        let arrayNames = json.arrayValue
-        
-        for i in 0..<5 {
-            let name = arrayNames[i]["name"].stringValue
-            let id = arrayNames[i]["id"].intValue
-            let image = arrayNames[i]["image"].stringValue
-            
-            persons.append(Person(index: i, name: name, id: id, image: image))
-        }
+        let persons = personsAppend(from: json.arrayValue, count: 5)
         
         return persons as? T
     }
+    
+    static func personsAppend(from json: [JSON], count: Int) -> [Person] {
+        var persons: [Person] = []
+        for i in 0..<count {
+            let name = json[i]["name"].stringValue
+            let id = json[i]["id"].intValue
+            let image = json[i]["image"].stringValue
+            let species = json[i]["species"].stringValue //раса
+            let gender = json[i]["gender"].stringValue
+            let status = json[i]["status"].stringValue
+            let type = json[i]["type"].stringValue
+            let url = json[i]["url"].stringValue
+            //let episode = arrayNames[i]["episode"].arrayValue
+            //let origin = arrayNames[i]["origin"].dictionaryValue
+            //let location = arrayNames[i]["location"].dictionaryValue
+            
+            persons.append(Person(index: i, id: id, name: name, image: image, status: status, species: species, type: type, gender: gender, url: url))
+        }
+        return persons
+    }
 }
+

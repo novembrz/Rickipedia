@@ -9,7 +9,8 @@ import Foundation
 
 struct DataFetcherServices {
     
-    static func fetchAllPersons(urlString: String, completion: @escaping ([Person]?) -> Void) {
+    static func fetchAllPersons(completion: @escaping ([Person]?) -> Void) {
+        let urlString = "https://rickandmortyapi.com/api/character"
         NetworkService.fetchData(urlString: urlString, decodeType: .all, completion: completion)
     }
     

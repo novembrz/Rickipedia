@@ -34,7 +34,7 @@ struct CustomTabBar: View {
             ,alignment: .bottomLeading
         )
         .cornerRadius(50)
-        .padding(.horizontal, 15)
+        //.padding(.horizontal, 5)
         .padding(.bottom, 30)
     }
     
