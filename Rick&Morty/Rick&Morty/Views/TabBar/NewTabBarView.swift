@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DefaultView: View {
+struct NewTabBarView: View {
     @StateObject var viewRouter: Router
     @State var selectedTab = "house"
     
@@ -21,24 +21,24 @@ struct DefaultView: View {
                 case "eye":
                     SearchView(viewModel: SearchViewModel())
                 case "suit.heart":
-                    Text("Records")
+                    Text("Liked")
                 case "person":
-                    Text("person")
+                    Text("Profile")
                 default:
-                    Text("User")
+                    Text("Error")
                 }
                 Spacer()
                 
                 CustomTabBar(viewRouter: viewRouter, selectedTab: $selectedTab)
             }
-            .edgesIgnoringSafeArea(.all)
+            .viewSettings()
         }
     }
 }
 
 struct DefaultView_Previews: PreviewProvider {
     static var previews: some View {
-        DefaultView(viewRouter: Router())
+        NewTabBarView(viewRouter: Router())
     }
 }
 
@@ -48,7 +48,7 @@ struct DefaultView_Previews: PreviewProvider {
      
      var body: some Scene {
          WindowGroup {
-            DefaultView(viewRouter: viewRouter)
+            NewTabBarView(viewRouter: viewRouter)
          }
      }
  }

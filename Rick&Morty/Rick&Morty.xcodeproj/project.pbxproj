@@ -95,7 +95,8 @@
 		C81CE1B2266B936E009D7315 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				C8F1775F267A267800A8394D /* NewTabBar */,
+				C8F17760267A268600A8394D /* NewTabBarView.swift */,
+				C8F17762267A26B300A8394D /* Router.swift */,
 				C857FF672661114B00AD220D /* CustomTabBar.swift */,
 				C81CE1B5266B9430009D7315 /* TabBarButtons.swift */,
 				C81CE1B7266B945E009D7315 /* TabCurve.swift */,
@@ -238,15 +239,6 @@
 				C8A2A172265D4E1D0032CF57 /* DataFetcher.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		C8F1775F267A267800A8394D /* NewTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				C8F17760267A268600A8394D /* NewTabBarView.swift */,
-				C8F17762267A26B300A8394D /* Router.swift */,
-			);
-			path = NewTabBar;
 			sourceTree = "<group>";
 		};
 		D10B6086324392F5D8624A1E /* Pods */ = {

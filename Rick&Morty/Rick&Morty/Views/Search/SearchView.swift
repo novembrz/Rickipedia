@@ -30,7 +30,6 @@ struct SearchView: View {
 
             CardsView(searchText: $searchText)
         }
-        .viewSettings()
     }
 }
 

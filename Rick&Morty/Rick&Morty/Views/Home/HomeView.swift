@@ -18,12 +18,8 @@ struct HomeView: View {
             Spacer()
             CarouselBlock()
             Spacer()
-            
-//            ZStack(alignment: .bottom) {
-//                CustomTabBar(selectedTab: $selectedTab)
-//            }
         }
-        .viewSettings()
+        //.viewSettings()
     }
 }
 
