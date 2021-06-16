@@ -12,10 +12,10 @@ class Router: ObservableObject {
     //@Published мы уведомляем все наблюдающие представления, чтобы они обновляли себя всякий раз, когда  страница,  назначенная  переменной currentView,  изменяется.
 }
 
-enum Page {
+enum Page: String {
     case home
+    case search
     case liked
-    case records
-    case user
+    case profile
 }
 

@@ -10,16 +10,16 @@ import SwiftUI
 //MARK: CustomTabBar
 
 struct CustomTabBar: View {
-    
+    var viewRouter: Router
     @Binding var selectedTab: String
     @State var tabPoints: [CGFloat] = []
     
     var body: some View {
         HStack(spacing: 0) {
-            TabBarButtons(image: "house", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButtons(image: "eye", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButtons(image: "suit.heart", selectedTab: $selectedTab, tabPoints: $tabPoints)
-            TabBarButtons(image: "person", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButtons(viewRouter: viewRouter, assignedPage: .home, image: "house", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButtons(viewRouter: viewRouter, assignedPage: .search, image: "eye", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButtons(viewRouter: viewRouter, assignedPage: .liked, image: "suit.heart", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButtons(viewRouter: viewRouter, assignedPage: .profile, image: "person", selectedTab: $selectedTab, tabPoints: $tabPoints)
         }
         .padding()
         .background(
