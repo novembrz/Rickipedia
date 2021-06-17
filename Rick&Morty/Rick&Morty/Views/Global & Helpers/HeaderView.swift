@@ -23,7 +23,7 @@ struct HeaderView: View {
             Button {
                 isPerformed.toggle()
             } label: {
-                Image(title)
+                Image(title ?? "")
                     .resizable()
                     .frame(width: 35, height: 35)
                     .foregroundColor(.white)

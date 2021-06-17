@@ -30,7 +30,7 @@ struct CarouselBlock: View {
                             persons[person.index].offset = value.translation.width
                         } else {
                             if person.index > 0 {
-                                persons[person.index - 1].offset = -(calculateWidth() + 60) + value.translation.width
+                                persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60) + value.translation.width
                             }
                         }
                         
@@ -41,7 +41,7 @@ struct CarouselBlock: View {
                         if value.translation.width < 0 {
                             //движение карт
                             if -value.translation.width > 180 && person.index != persons.last!.index {
-                                persons[person.index].offset = -(calculateWidth() + 60)
+                                persons[person.index].offset = -(SizeGenerator.calculateWidth() + 60)
                                 scrolled += 1
                             } else {
                                 persons[person.index].offset = 0
@@ -54,7 +54,7 @@ struct CarouselBlock: View {
                                     persons[person.index - 1].offset = 0
                                     scrolled -= 1
                                 } else {
-                                    persons[person.index - 1].offset = -(calculateWidth() + 60)
+                                    persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60)
                                 }
                             }
                         }
@@ -62,11 +62,11 @@ struct CarouselBlock: View {
                 }))
             }
         }
-        .frame(height: height)
+        .frame(height: SizeGenerator.height)
         .padding(.horizontal, 25)
         .padding(.top, 25)
         .onAppear() {
-            DataFetcherServices.fetchRandomPersons { personArray in
+            DataFetcherServices().fetchRandomPersons { personArray in
                 guard let persons = personArray else {return}
                 self.persons = persons
                 print("🦖🦖🦖", persons)
@@ -75,14 +75,6 @@ struct CarouselBlock: View {
     }
     
 }
-
-
-func calculateWidth() -> CGFloat {
-    let screen = UIScreen.main.bounds.width - 50 // 50 hor padding
-    return screen - (2 * 30)
-}
-var height = UIScreen.main.bounds.height / 1.8
-
 
 struct CarouselBlock_Previews: PreviewProvider {
     static var previews: some View {

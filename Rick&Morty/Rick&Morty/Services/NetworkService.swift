@@ -11,6 +11,7 @@ import SwiftyJSON
 enum DecodeType {
     case all
     case random
+    case person
 }
 
 struct NetworkService {
@@ -30,37 +31,25 @@ struct NetworkService {
             }
             //print("💡Network responce", response)
             
+            guard let json = try? JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers) else {return}
+            
             switch decodeType {
             case .all:
-                let decoded = decodeAllJSON(type: T.self, from: data)
-                completion(decoded)
+                let persons = appendPersons(from: json["results"].arrayValue, count: 20)
+                completion(persons as? T)
             case .random:
-                let decoded = decodeRandomJSON(type: T.self, from: data)
-                completion(decoded)
+                let persons = appendPersons(from: json.arrayValue, count: 5)
+                completion(persons as? T)
+            case .person:
+                let person = appendOnePerson(from: json)
+                completion(person as? T)
             }
         }
         task.resume()
     }
     
     //MARK: Decode
-    
-    static func decodeAllJSON<T>(type: T.Type, from: Data?) -> T? {
-        guard let data = from else { return nil }
-        guard let json = try? JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers) else {return nil}
-        let persons = personsAppend(from: json["results"].arrayValue, count: 20)
-        
-        return persons as? T
-    }
-    
-    static func decodeRandomJSON<T>(type: T.Type, from: Data?) -> T? {
-        guard let data = from else { return nil }
-        guard let json = try? JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers) else {return nil}
-        let persons = personsAppend(from: json.arrayValue, count: 5)
-        
-        return persons as? T
-    }
-    
-    static func personsAppend(from json: [JSON], count: Int) -> [Person] {
+    static func appendPersons(from json: [JSON], count: Int) -> [Person] {
         var persons: [Person] = []
         for i in 0..<count {
             let name = json[i]["name"].stringValue
@@ -78,6 +67,20 @@ struct NetworkService {
             persons.append(Person(index: i, id: id, name: name, image: image, status: status, species: species, type: type, gender: gender, url: url))
         }
         return persons
+    }
+    
+    static func appendOnePerson(from json: JSON) -> Person {
+        let name = json["name"].stringValue
+        let id = json["id"].intValue
+        let image = json["image"].stringValue
+        let species = json["species"].stringValue //раса
+        let gender = json["gender"].stringValue
+        let status = json["status"].stringValue
+        let type = json["type"].stringValue
+        let url = json["url"].stringValue
+        
+        let person = Person(index: 0, id: id, name: name, image: image, status: status, species: species, type: type, gender: gender, url: url)
+        return person
     }
 }
 

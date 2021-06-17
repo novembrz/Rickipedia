@@ -17,6 +17,7 @@ struct SearchBarView: View {
             HStack { //MARK: Search TF
                 TextField(randomString(), text: $searchText)
                     .colorInvert()
+                    .disableAutocorrection(true)
                     .foregroundColor(.black)
                     .accentColor(Color("accentPink"))
                     .padding(.leading, 28)
@@ -54,7 +55,6 @@ struct SearchBarView: View {
                 Button {
                     isSearching = false
                     searchText = ""
-                    
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 } label: {
                     Text("Cancel")

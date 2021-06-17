@@ -7,7 +7,19 @@
 
 import SwiftUI
 
-struct NewTabBarView: View {
+enum Page: String {
+    case home
+    case search
+    case liked
+    case profile
+}
+
+class Router: ObservableObject {
+    @Published var currentPage: Page = .home //наблюдатель нажатия
+    //@Published мы уведомляем все наблюдающие представления, чтобы они обновляли себя всякий раз, когда  страница,  назначенная  переменной currentView,  изменяется.
+}
+
+struct TabBarRouterView: View {
     @StateObject var viewRouter: Router
     @State var selectedTab = "house"
     
@@ -38,7 +50,7 @@ struct NewTabBarView: View {
 
 struct DefaultView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTabBarView(viewRouter: Router())
+        TabBarRouterView(viewRouter: Router())
     }
 }
 
@@ -48,7 +60,7 @@ struct DefaultView_Previews: PreviewProvider {
      
      var body: some Scene {
          WindowGroup {
-            NewTabBarView(viewRouter: viewRouter)
+            TabBarRouterView(viewRouter: viewRouter)
          }
      }
  }
