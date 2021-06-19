@@ -5,4 +5,4 @@ Getting data from Rick&Morty API - https://rickandmortyapi.com
 App design: me  
 
 ### Used:
-SwiftUI, SwiftyJSON, MVVM архитектура
+SwiftUI, SwiftyJSON, Kingfisher, MVVM архитектура
