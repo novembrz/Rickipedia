@@ -22,8 +22,8 @@ struct Person: Identifiable, Hashable {
     let gender: String
     let url: String
     
-    //let origin: PersonOrigin
-    //let location: PersonLocation
+    //let origin: PersonOrigin //место рождения/ откуда пришел
+    //let location: PersonLocation //шде мы его увидели
     //let episode: [String]
 }
 

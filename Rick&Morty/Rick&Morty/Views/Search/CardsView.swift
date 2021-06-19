@@ -11,12 +11,13 @@ import Kingfisher
 struct CardsView: View {
     
     @State var persons: [Person] = []
+    @State private var showCard = false
+    @State var id: Int?
     @Binding var searchText: String
     
     var columns: [GridItem] = Array(repeating: .init(.flexible(maximum: 140), spacing: 28, alignment: .top), count: 3)
     
     var body: some View {
-    
         ScrollView(.vertical, showsIndicators: false) {
             LazyVGrid(columns: columns) {
                 ForEach((persons).filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.self) { person in
@@ -33,6 +34,14 @@ struct CardsView: View {
                             .multilineTextAlignment(.center)
                     }
                     .frame(maxWidth: .infinity, idealHeight: 150)
+                    .onTapGesture {
+                        withAnimation(.spring()) {
+                            id = person.id
+                            showCard.toggle()
+                        }
+                    }.sheet(isPresented: $showCard) {
+                        PersonCardView(id: $id)
+                    }
                 }
             }
         }

@@ -11,11 +11,11 @@ import Kingfisher
 struct CarouselContentView: View {
     @EnvironmentObject var viewModel: CarouselViewModel
     @State private var showCard = false
-    @State var name: String? //delete
     @State var id: Int?
     
     var person: Person
     var scrolled: Int
+    var linerGradient = LinearGradient(gradient: Gradient(colors: [Color("accentBlue"), Color("accentGreen")]), startPoint: .leading, endPoint: .trailing)
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
@@ -39,13 +39,13 @@ struct CarouselContentView: View {
                 Button {
                     
                 } label: {
-                    Text("Read Latter")
+                    Text("􀊵 Add to Favorites")
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.vertical, 6)
                         .padding(.horizontal, 25)
-                        .background(Color.blue)
+                        .background(Color("accentBlue"))
                         .clipShape(Capsule())
                 }
             }
