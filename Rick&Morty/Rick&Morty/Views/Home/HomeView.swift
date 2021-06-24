@@ -16,15 +16,14 @@ struct HomeView: View {
         VStack(spacing: 10) {
             HeaderView(title: "RICKIPEDIA", isPerformed: $isMenuOpen)
             Spacer()
-            CarouselBlock()
+            CarouselBlockView(viewModel: CarouselBlockViewModel())
             Spacer()
         }
-        //.viewSettings()
     }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        TabBarRouterView(viewRouter: Router())
     }
 }

@@ -9,13 +9,12 @@ import SwiftUI
 
 struct SearchBarView: View {
     
-    @Binding var searchText: String
-    @Binding var isSearching: Bool
+    @ObservedObject var viewModel = SearchViewModel()
     
     var body: some View {
         HStack {
             HStack { //MARK: Search TF
-                TextField(randomString(), text: $searchText)
+                TextField(viewModel.randomString(), text: $viewModel.searchText)
                     .colorInvert()
                     .disableAutocorrection(true)
                     .foregroundColor(.black)
@@ -27,7 +26,7 @@ struct SearchBarView: View {
             .background(Color.gray.opacity(0.3))
             .cornerRadius(10)
             .onTapGesture {
-                isSearching = true
+                viewModel.isSearching = true
             }
             //MARK: Xmark & Search
             .overlay(
@@ -35,9 +34,9 @@ struct SearchBarView: View {
                     Image(systemName: "magnifyingglass")
                     Spacer()
                     
-                    if isSearching {
+                    if viewModel.isSearching {
                         Button {
-                            searchText = ""
+                            viewModel.searchText = ""
                         } label: {
                             Image(systemName: "xmark.circle.fill")
                                 .padding(.vertical)
@@ -51,10 +50,10 @@ struct SearchBarView: View {
             .animation(.easeOut)
             
             //MARK: Cancel
-            if isSearching {
+            if viewModel.isSearching {
                 Button {
-                    isSearching = false
-                    searchText = ""
+                    viewModel.isSearching = false
+                    viewModel.searchText = ""
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 } label: {
                     Text("Cancel")
@@ -67,13 +66,9 @@ struct SearchBarView: View {
             }
         }
     }
-    
-    func randomString() -> String {
-        let words = ["Evil Beth Clone", "Venzenulon 7", "Gromflom Prime", "Rick D. Sanchez III", "Birdperson", "Cowboy Morty", "Fascist Mr. President", "Unity", "Earth (C-137)"]
-        return words.randomElement()!
-    }
 }
 
+//MARK: - Previews
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(viewModel: SearchViewModel())

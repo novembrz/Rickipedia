@@ -8,19 +8,36 @@
 import SwiftUI
 import Kingfisher
 
-struct CardsView: View {
-    
-    @State var persons: [Person] = []
-    @State private var showCard = false
-    @State var id: Int?
-    @Binding var searchText: String
+//MARK: - ViewModel
+final class CardsViewModel: ObservableObject {
+    @Published var persons: [Person] = []
+    @Published var showCard = false
+    @Published var isLoading = false
+    @Published var id: Int?
     
     var columns: [GridItem] = Array(repeating: .init(.flexible(maximum: 140), spacing: 28, alignment: .top), count: 3)
     
+    func getPersons() {
+        isLoading = true
+        DataFetcherServices().fetchAllPersons { [self] result in
+            DispatchQueue.main.async {
+                isLoading = false
+                guard let personArray = result else {return}
+                persons = personArray
+            }
+        }
+    }
+}
+
+//MARK: - View
+struct CardsView: View {
+    @Binding var searchText: String
+    @ObservedObject var viewModel = CardsViewModel()
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            LazyVGrid(columns: columns) {
-                ForEach((persons).filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.self) { person in
+            LazyVGrid(columns: viewModel.columns) {
+                ForEach((viewModel.persons).filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.self) { person in
                     
                     VStack(spacing: 13) {
                         KFImage(URL(string: person.image ?? defaultImageUrl))
@@ -36,27 +53,23 @@ struct CardsView: View {
                     .frame(maxWidth: .infinity, idealHeight: 150)
                     .onTapGesture {
                         withAnimation(.spring()) {
-                            id = person.id
-                            showCard.toggle()
+                            viewModel.id = person.id
+                            viewModel.showCard.toggle()
                         }
-                    }.sheet(isPresented: $showCard) {
-                        PersonCardView(id: $id)
+                    }.sheet(isPresented: $viewModel.showCard) {
+                        PersonCardView(id: $viewModel.id)
                     }
                 }
             }
         }
         .animation(.easeIn)
         .transition(.move(edge: .top))
-        .onAppear() {
-            DataFetcherServices().fetchAllPersons { personArray in
-                guard let persons = personArray else {return}
-                self.persons = persons
-                print("🦖🦖🦖", persons)
-            }
-        }
+        .onAppear() { viewModel.getPersons() }
+        if viewModel.isLoading { LoadingView() }
     }
 }
 
+//MARK: - Previews
 struct CardsView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(viewModel: SearchViewModel())

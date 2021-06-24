@@ -8,79 +8,56 @@
 import SwiftUI
 import Kingfisher
 
-struct PersonCardView: View {
-    
-    @State var person: Person?
-    @State var show = false
-    @Binding var id: Int?
+//MARK: - ViewModel
+final class PersonCardViewModel: ObservableObject {
+    @Published var person: Person?
+    @Published var show = false
     //var id: Int?
     let maxHeigth = UIScreen.main.bounds.height / 1.32
+    
+    func getPerson(id: Int?) {
+        DataFetcherServices().fetchPerson(id: id ?? 1) { result in
+            DispatchQueue.main.async {
+                guard let personAll = result else {return}
+                self.person = personAll
+            }
+        }
+    }
+}
+
+//MARK: - View
+struct PersonCardView: View {
+    @Binding var id: Int?
+    @ObservedObject var viewModel = PersonCardViewModel()
     
     var body: some View {
         ZStack(alignment: .top) {
             ScrollView(.vertical, showsIndicators: false) {
                 //MARK: Parallax
                 GeometryReader { reader in
-                    KFImage(URL(string: person?.image ?? defaultImageUrl))
+                    KFImage(URL(string: viewModel.person?.image ?? defaultImageUrl))
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .offset(y: -reader.frame(in: .global).minY)
                         .frame(width: UIScreen.main.bounds.width,
-                               height: reader.frame(in: .global).minY + maxHeigth)
+                               height: reader.frame(in: .global).minY + viewModel.maxHeigth)
                 }
-                .frame(height: maxHeigth)
+                .frame(height: viewModel.maxHeigth)
                 
-                PersonView(person: person ?? Person(index: 0, id: 0, name: "", image: "", status: "", species: "", type: "", gender: "", url: ""))
+                PersonView(person: viewModel.person ?? Person(index: 0, id: 0, name: "", image: "", status: "", species: "", type: "", gender: "", url: ""))
                 
             }
             .background(Color("GrayElementColor"))
             .edgesIgnoringSafeArea(.all)
-            .onAppear() {
-                DataFetcherServices().fetchPerson(id: id ?? 1) { result in
-                    guard let personAll = result else {return}
-                    self.person = personAll
-                }
-            }
+            .onAppear() { viewModel.getPerson(id: id) }
             
             HeaderButtonsView()
         }
     }
 }
 
-//MARK: PersonView
-struct PersonView: View {
-    
-    var person: Person
-    
-    var body: some View {
-        VStack(spacing: 45) {
-            
-            PersonInformationView(person: person)
-            PersonLocationView(person: person)
-            Button {
-                // TODO: Routing to EpisodeViewController
-            } label: {
-                Text("SEE PERSON’S EPISODES")
-                    .font(.system(size: 20, weight: .medium))
-            }
-            .padding(.vertical, 10)
-            .frame(maxWidth: .infinity)
-            .cornerRadius(10)
-            .border(Color.white, width: 2)
-            .cornerRadius(10)
-            
-        }
-        .foregroundColor(.white)
-        .padding(.top, 20)
-        .padding(.horizontal, 23)
-        .background(Color("GrayElementColor"))
-        .cornerRadius(20)
-        .offset(y: -30)
-    }
-}
-
+//MARK: HeaderButtonsView
 struct HeaderButtonsView: View {
-    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var isFav = false
     
@@ -103,13 +80,13 @@ struct HeaderButtonsView: View {
                     .resizable()
                     .frame(width: 30, height: 30)
                     .animation(.spring())
-                
             }
         }
         .padding()
     }
 }
 
+//MARK: - Previews
 //struct PersonsCardView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        PersonCardView()

@@ -15,8 +15,6 @@ struct PersonInformationView: View {
     
     var body: some View {
         VStack(spacing: 21) {
-            
-            
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(.white.opacity(0.5))
                 .frame(width: 111, height: 7)
@@ -36,7 +34,6 @@ struct PersonInformationView: View {
                         .font(.system(size: 20, weight: .regular))
                 }
             }
-            
             
             LazyVGrid(columns: columns, spacing: 20) {
                 PersonInformationViewItem(image: "marsian", desc: person.species)
@@ -64,7 +61,7 @@ struct PersonInformationViewItem: View {
     var desc: String
     
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Image(image)
                 .resizable()
                 .frame(width: 27, height: 27)

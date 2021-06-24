@@ -7,17 +7,35 @@
 
 import SwiftUI
 
-struct CarouselBlock: View {
-    @State var persons: [Person] = []
-    @State private var scrolled = 0
+//MARK: - ViewModel
+
+final class CarouselBlockViewModel: ObservableObject {
+    @Published var persons: [Person] = []
+    @Published var scrolled = 0
+    @Published var isLoading = false
     
-    @EnvironmentObject var viewModel: CarouselViewModel
+    func getPersons() {
+        isLoading = true
+        DataFetcherServices().fetchRandomPersons { [self] result in
+            DispatchQueue.main.async {
+                isLoading = false
+                guard let personArray = result else {return}
+                persons = personArray
+            }
+        }
+    }
+}
+
+//MARK: - View
+
+struct CarouselBlockView: View {
+    @ObservedObject var viewModel: CarouselBlockViewModel
     
     var body: some View {
         ZStack {
-            ForEach(persons.reversed()) { person in //persons.indices.reversed()
+            ForEach(viewModel.persons.reversed()) { person in //persons.indices.reversed()
                 HStack {
-                    CarouselContentView(person: person, scrolled: scrolled)
+                    CarouselContentView(viewModel: CarouselViewModel(person: person, scrolled: viewModel.scrolled))
                 }
                 .contentShape(Rectangle())
                 
@@ -26,11 +44,11 @@ struct CarouselBlock: View {
                 .gesture(DragGesture().onChanged({ (value) in
                     withAnimation {
                         //отключение перетягивания для последней карты
-                        if value.translation.width < 0 && person.index != persons.last!.index {
-                            persons[person.index].offset = value.translation.width
+                        if value.translation.width < 0 && person.index != viewModel.persons.last!.index {
+                            viewModel.persons[person.index].offset = value.translation.width
                         } else {
                             if person.index > 0 {
-                                persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60) + value.translation.width
+                                viewModel.persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60) + value.translation.width
                             }
                         }
                         
@@ -40,21 +58,21 @@ struct CarouselBlock: View {
                     withAnimation {
                         if value.translation.width < 0 {
                             //движение карт
-                            if -value.translation.width > 180 && person.index != persons.last!.index {
-                                persons[person.index].offset = -(SizeGenerator.calculateWidth() + 60)
-                                scrolled += 1
+                            if -value.translation.width > 180 && person.index != viewModel.persons.last!.index {
+                                viewModel.persons[person.index].offset = -(SizeGenerator.calculateWidth() + 60)
+                                viewModel.scrolled += 1
                             } else {
-                                persons[person.index].offset = 0
+                                viewModel.persons[person.index].offset = 0
                             }
                             
                         } else {
                             //возврат карточки
                             if person.index > 0 {
                                 if value.translation.width > 180 {
-                                    persons[person.index - 1].offset = 0
-                                    scrolled -= 1
+                                    viewModel.persons[person.index - 1].offset = 0
+                                    viewModel.scrolled -= 1
                                 } else {
-                                    persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60)
+                                    viewModel.persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60)
                                 }
                             }
                         }
@@ -65,19 +83,13 @@ struct CarouselBlock: View {
         .frame(height: SizeGenerator.height)
         .padding(.horizontal, 25)
         .padding(.top, 25)
-        .onAppear() {
-            DataFetcherServices().fetchRandomPersons { personArray in
-                guard let persons = personArray else {return}
-                self.persons = persons
-                print("🦖🦖🦖", persons)
-            }
-        }
+        .onAppear() { viewModel.getPersons() }
+        if viewModel.isLoading { LoadingView() }
     }
-    
 }
 
 struct CarouselBlock_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        TabBarRouterView(viewRouter: Router())
     }
 }
