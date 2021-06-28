@@ -11,7 +11,9 @@ import SwiftyJSON
 enum DecodeType {
     case all
     case random
+    case randomLocations
     case person
+    case location
 }
 
 struct NetworkService {
@@ -35,52 +37,24 @@ struct NetworkService {
             
             switch decodeType {
             case .all:
-                let persons = appendPersons(from: json["results"].arrayValue, count: 20)
+                let persons = NetworkParser.appendPersons(from: json["results"].arrayValue, count: 20)
                 completion(persons as? T)
             case .random:
-                let persons = appendPersons(from: json.arrayValue, count: 5)
+                let persons = NetworkParser.appendPersons(from: json.arrayValue, count: 5)
                 completion(persons as? T)
+            case .randomLocations:
+                let locations = NetworkParser.appendLocations(from: json.arrayValue, count: 5)
+                completion(locations as? T)
             case .person:
-                let person = appendOnePerson(from: json)
+                let person = NetworkParser.appendOnePerson(from: json)
                 completion(person as? T)
+            case .location:
+                let location = NetworkParser.appendOneLocation(from: json)
+                completion(location as? T)
             }
         }
         task.resume()
     }
-    
-    //MARK: Decode
-    static func appendPersons(from json: [JSON], count: Int) -> [Person] {
-        var persons: [Person] = []
-        for i in 0..<count {
-            let name = json[i]["name"].stringValue
-            let id = json[i]["id"].intValue
-            let image = json[i]["image"].stringValue
-            let species = json[i]["species"].stringValue //раса
-            let gender = json[i]["gender"].stringValue
-            let status = json[i]["status"].stringValue
-            let type = json[i]["type"].stringValue
-            let url = json[i]["url"].stringValue
-            //let episode = arrayNames[i]["episode"].arrayValue
-            //let origin = arrayNames[i]["origin"].dictionaryValue
-            //let location = arrayNames[i]["location"].dictionaryValue
-            
-            persons.append(Person(index: i, id: id, name: name, image: image, status: status, species: species, type: type, gender: gender, url: url))
-        }
-        return persons
-    }
-    
-    static func appendOnePerson(from json: JSON) -> Person {
-        let name = json["name"].stringValue
-        let id = json["id"].intValue
-        let image = json["image"].stringValue
-        let species = json["species"].stringValue //раса
-        let gender = json["gender"].stringValue
-        let status = json["status"].stringValue
-        let type = json["type"].stringValue
-        let url = json["url"].stringValue
-        
-        let person = Person(index: 0, id: id, name: name, image: image, status: status, species: species, type: type, gender: gender, url: url)
-        return person
-    }
 }
+
 

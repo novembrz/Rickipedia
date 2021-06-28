@@ -7,14 +7,13 @@
 
 import Foundation
 
-struct Location: Identifiable {
+struct Location: Identifiable, Hashable {
     var uuID = UUID() //var uuID = UUID().uuidString
-    let index: Int
     
     let id: Int
     let name: String
     let type: String
     let dimension: String
     let url: String
-    let residents: [String]
+    let residents: [String] //links foe persons
 }

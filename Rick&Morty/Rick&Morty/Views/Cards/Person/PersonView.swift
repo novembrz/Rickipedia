@@ -10,6 +10,8 @@ import SwiftUI
 //MARK: PersonView
 struct PersonView: View {
     var person: Person
+    var location: Location?
+    var origin: Location?
     
     var body: some View {
         VStack() {
@@ -20,19 +22,23 @@ struct PersonView: View {
             
             VStack(spacing: 45) {
                 PersonInformationView(person: person)
-                PersonLocationView(person: person)
+                PersonLocationView(origin: origin, location: location)
                 Button {
                     // TODO: Routing to EpisodeViewController
+                    print(person.name, person.episode)
                 } label: {
-                    Text("SEE PERSON’S EPISODES")
-                        .font(.system(size: 20, weight: .medium))
+                    Text("See person's episodes".uppercased())
+                        .font(.system(size: 16, weight: .bold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 12)
+                        .foregroundColor(Color.white)
+                        .frame(height: 42)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.white, lineWidth: 2)
+                                .frame(height: 40)
+                        )
                 }
-                .padding(.vertical, 10)
-                .frame(maxWidth: .infinity)
-                .cornerRadius(10)
-                .border(Color.white, width: 2)
-                .cornerRadius(10)
-                
             }
             .foregroundColor(.white)
             .padding(.top, 20)

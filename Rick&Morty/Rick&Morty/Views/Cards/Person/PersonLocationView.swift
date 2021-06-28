@@ -9,9 +9,10 @@ import SwiftUI
 
 //MARK: View
 struct PersonLocationView: View {
+    var origin: Location?
+    var location: Location?
     
-    var person: Person
-    var columns: [GridItem] = Array(repeating: .init(.flexible(maximum: UIScreen.main.bounds.width / 2), spacing: 20, alignment: .topLeading), count: 2)
+    let columns: [GridItem] = Array(repeating: .init(.flexible(maximum: UIScreen.main.bounds.width / 2), spacing: 20, alignment: .topLeading), count: 2)
     
     var body: some View {
         VStack(alignment: .leading, spacing: 21) {
@@ -19,8 +20,12 @@ struct PersonLocationView: View {
                 .font(.system(size: 30, weight: .bold))
             
             LazyVGrid(columns: columns) {
-                PersonLocationViewItem(image: "DarkLocation", name: "Origin", desc: "person.origin")
-                PersonLocationViewItem(image: "LightLocation", name: "Last location", desc: "person.location")
+                if origin != nil && origin?.name != "" && origin?.name != "unknow" {
+                    PersonLocationViewItem(image: "DarkLocation", name: "Origin", desc: origin!.name, url: origin!.url)
+                }
+                if location != nil && location?.name != "" && location?.name != "unknow" {
+                    PersonLocationViewItem(image: "LightLocation", name: "Last location", desc: location!.name, url: location!.url)
+                }
             }
         }
     }
@@ -31,6 +36,7 @@ struct PersonLocationViewItem: View {
     var image: String
     var name: String
     var desc: String
+    var url: String
     
     var body: some View {
         Button {
@@ -47,6 +53,7 @@ struct PersonLocationViewItem: View {
                         .font(.system(size: 20, weight: .medium))
                     Text(desc)
                         .font(.system(size: 16, weight: .regular))
+                        .lineLimit(1)
                 }
             }
         }

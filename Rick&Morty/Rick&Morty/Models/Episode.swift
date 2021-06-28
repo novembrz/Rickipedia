@@ -9,7 +9,6 @@ import Foundation
 
 struct Episode: Identifiable {
     var uuID = UUID() //var uuID = UUID().uuidString
-    let index: Int
     
     let id: Int
     let name: String

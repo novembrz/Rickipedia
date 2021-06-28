@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 //MARK: - ViewModel
-class CarouselViewModel: ObservableObject {
+final class CarouselViewModel: ObservableObject {
     @Published var showCard = false
     @Published var id: Int?
     @Published var person: Person

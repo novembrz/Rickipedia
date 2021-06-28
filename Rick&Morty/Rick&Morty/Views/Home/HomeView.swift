@@ -13,11 +13,14 @@ struct HomeView: View {
     @State var isMenuOpen = false
     
     var body: some View {
-        VStack(spacing: 10) {
-            HeaderView(title: "RICKIPEDIA", isPerformed: $isMenuOpen)
-            Spacer()
-            CarouselBlockView(viewModel: CarouselBlockViewModel())
-            Spacer()
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 50) {
+                VStack(spacing: 10) {
+                    HeaderView(title: "rickipedia".uppercased(), isPerformed: $isMenuOpen)
+                    CarouselBlockView(viewModel: CarouselBlockViewModel())
+                }
+                LocationBlockView(viewModel: LocationBlockViewModel())
+            }
         }
     }
 }

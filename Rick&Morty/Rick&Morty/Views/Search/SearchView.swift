@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-
+//MARK: - ViewModel
 final class SearchViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var isSearching = false
@@ -23,13 +23,13 @@ final class SearchViewModel: ObservableObject {
     }
 }
 
+//MARK: - View
 struct SearchView: View {
     @ObservedObject var viewModel: SearchViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {
-
-            HeaderView(title: "SEARCH", isPerformed: $viewModel.isMenuOpen)
+            HeaderView(title: "search".uppercased(), isPerformed: $viewModel.isMenuOpen)
             SearchBarView(viewModel: SearchViewModel())
             
             if viewModel.isMenuOpen {
@@ -41,6 +41,7 @@ struct SearchView: View {
     }
 }
 
+//MARK: - Previews
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(viewModel: SearchViewModel())

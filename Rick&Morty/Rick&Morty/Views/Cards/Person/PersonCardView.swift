@@ -12,14 +12,40 @@ import Kingfisher
 final class PersonCardViewModel: ObservableObject {
     @Published var person: Person?
     @Published var show = false
+    @Published var location: Location?
+    @Published var origin: Location?
     //var id: Int?
     let maxHeigth = UIScreen.main.bounds.height / 1.32
     
     func getPerson(id: Int?) {
         DataFetcherServices().fetchPerson(id: id ?? 1) { result in
             DispatchQueue.main.async {
-                guard let personAll = result else {return}
-                self.person = personAll
+                guard let person = result else {return}
+                self.person = person
+                self.getLocation()
+                self.getOrigin()
+            }
+        }
+    }
+    
+    func getLocation() {
+        if let locationURL = person?.location?.url {
+            DataFetcherServices().fetchCurrentLocation(url: locationURL) { result in
+                DispatchQueue.main.async {
+                    guard let location = result else {return}
+                    self.location = location
+                }
+            }
+        }
+    }
+    
+    func getOrigin() {
+        if let originURL = person?.origin?.url {
+            DataFetcherServices().fetchCurrentLocation(url: originURL) { result in
+                DispatchQueue.main.async {
+                    guard let origin = result else {return}
+                    self.location = origin
+                }
             }
         }
     }
@@ -44,45 +70,19 @@ struct PersonCardView: View {
                 }
                 .frame(height: viewModel.maxHeigth)
                 
-                PersonView(person: viewModel.person ?? Person(index: 0, id: 0, name: "", image: "", status: "", species: "", type: "", gender: "", url: ""))
-                
+                PersonView(person: viewModel.person ??
+                            Person(index: 0, id: 0, name: "", image: "", status: "", species: "", type: "", gender: "", url: "", origin: PersonOrigin(name: "", url: ""), location: PersonLocation(name: "", url: ""), episode: []),
+                           location: viewModel.location,
+                           origin: viewModel.origin)
             }
             .background(Color("GrayElementColor"))
             .edgesIgnoringSafeArea(.all)
-            .onAppear() { viewModel.getPerson(id: id) }
+            .onAppear() {
+                viewModel.getPerson(id: id)
+            }
             
             HeaderButtonsView()
         }
-    }
-}
-
-//MARK: HeaderButtonsView
-struct HeaderButtonsView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var isFav = false
-    
-    var body: some View {
-        HStack() {
-            Button {
-                self.presentationMode.wrappedValue.dismiss()
-            } label: {
-                Image(systemName: "chevron.backward")
-                    .resizable()
-                    .frame(width: 9, height: 18)
-                    .foregroundColor(.white)
-            }
-            Spacer()
-            Button {
-                // TODO: Add to favourite
-                isFav.toggle()
-            } label: {
-                Image(isFav ? "heart.fill" : "heart")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                    .animation(.spring())
-            }
-        }
-        .padding()
     }
 }
 
