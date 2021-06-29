@@ -11,6 +11,7 @@
 		C80756A326723A5F00A05E60 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80756A226723A5F00A05E60 /* CardsView.swift */; };
 		C80CF16D26873A5C00CA3375 /* LocationBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80CF16C26873A5C00CA3375 /* LocationBlockView.swift */; };
 		C80CF16F26890A0700CA3375 /* NetworkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80CF16E26890A0700CA3375 /* NetworkParser.swift */; };
+		C80CF1712689E75800CA3375 /* ImageExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80CF1702689E75800CA3375 /* ImageExists.swift */; };
 		C81CE1B6266B9430009D7315 /* TabBarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CE1B5266B9430009D7315 /* TabBarButtons.swift */; };
 		C81CE1B8266B945E009D7315 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CE1B7266B945E009D7315 /* TabCurve.swift */; };
 		C81CE1BB266B9A51009D7315 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CE1BA266B9A51009D7315 /* SearchView.swift */; };
@@ -50,6 +51,7 @@
 		C80756A226723A5F00A05E60 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		C80CF16C26873A5C00CA3375 /* LocationBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBlockView.swift; sourceTree = "<group>"; };
 		C80CF16E26890A0700CA3375 /* NetworkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkParser.swift; sourceTree = "<group>"; };
+		C80CF1702689E75800CA3375 /* ImageExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExists.swift; sourceTree = "<group>"; };
 		C81CE1B5266B9430009D7315 /* TabBarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtons.swift; sourceTree = "<group>"; };
 		C81CE1B7266B945E009D7315 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
 		C81CE1BA266B9A51009D7315 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				C86BD235267CBD960040A924 /* Extensions */,
 				C82D0E3D267A463000F5B0C9 /* Strings.swift */,
 				C82D0E3F267A469400F5B0C9 /* SizeGenerator.swift */,
+				C80CF1702689E75800CA3375 /* ImageExists.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				C8F17761267A268600A8394D /* TabBarRouterView.swift in Sources */,
 				C857FF612660E05300AD220D /* CarouselContentView.swift in Sources */,
 				C80CF16D26873A5C00CA3375 /* LocationBlockView.swift in Sources */,
+				C80CF1712689E75800CA3375 /* ImageExists.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

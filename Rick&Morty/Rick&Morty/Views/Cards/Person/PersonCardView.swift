@@ -44,7 +44,7 @@ final class PersonCardViewModel: ObservableObject {
             DataFetcherServices().fetchCurrentLocation(url: originURL) { result in
                 DispatchQueue.main.async {
                     guard let origin = result else {return}
-                    self.location = origin
+                    self.origin = origin
                 }
             }
         }

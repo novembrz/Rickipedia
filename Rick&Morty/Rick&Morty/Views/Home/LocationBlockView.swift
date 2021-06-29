@@ -36,9 +36,10 @@ struct LocationBlockView: View {
                     
                     ForEach(viewModel.locations, id: \.self) { location in
                         VStack(alignment: .leading, spacing: 8) {
-                            Image(location.id % 2 == 0 ? "DarkLocation" : "LightLocation")
+                            Image(imageExists(imageName: location.name) ? location.name : "DarkLocation")
                                 .resizable()
                                 .frame(width: 151, height: 81)
+                                .scaledToFit()
                                 .cornerRadius(10)
                             
                             Text(location.name)

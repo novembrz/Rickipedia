@@ -29,8 +29,8 @@ struct HeaderButtonsView: View {
                 Image(isFav ? "heart.fill" : "heart")
                     .resizable()
                     .frame(width: 30, height: 30)
-                    .animation(.spring())
             }
+            .animation(.spring())
         }
         .padding()
     }

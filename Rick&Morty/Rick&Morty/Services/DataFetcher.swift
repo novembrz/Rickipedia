@@ -50,7 +50,7 @@ struct DataFetcherServices {
     func fetchRandom<T>(url: String, count: Int, decodeType: DecodeType, completion: @escaping ([T]?) -> Void) {
         var urlString = ""
         
-        for _ in 0..<5 {
+        for _ in 0..<8 {
             let randomInt = Int.random(in: 0..<count)
             
             if urlString == "" {

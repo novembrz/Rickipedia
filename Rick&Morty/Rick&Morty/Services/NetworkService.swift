@@ -40,10 +40,10 @@ struct NetworkService {
                 let persons = NetworkParser.appendPersons(from: json["results"].arrayValue, count: 20)
                 completion(persons as? T)
             case .random:
-                let persons = NetworkParser.appendPersons(from: json.arrayValue, count: 5)
+                let persons = NetworkParser.appendPersons(from: json.arrayValue, count: 8)
                 completion(persons as? T)
             case .randomLocations:
-                let locations = NetworkParser.appendLocations(from: json.arrayValue, count: 5)
+                let locations = NetworkParser.appendLocations(from: json.arrayValue, count: 8)
                 completion(locations as? T)
             case .person:
                 let person = NetworkParser.appendOnePerson(from: json)

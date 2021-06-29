@@ -20,7 +20,6 @@ struct LoadingView: View {
                     .animation(Animation.linear(duration: 0.7).repeatForever(autoreverses: false))
             }
             .offset(x: 150, y: -250)
-            //.background(Color("GrayBgColor"))
             .onAppear() {
                 self.animate.toggle()
             }

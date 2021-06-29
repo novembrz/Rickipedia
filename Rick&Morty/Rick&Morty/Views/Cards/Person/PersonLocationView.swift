@@ -15,16 +15,20 @@ struct PersonLocationView: View {
     let columns: [GridItem] = Array(repeating: .init(.flexible(maximum: UIScreen.main.bounds.width / 2), spacing: 20, alignment: .topLeading), count: 2)
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 21) {
-            Text("Locations")
-                .font(.system(size: 30, weight: .bold))
-            
-            LazyVGrid(columns: columns) {
-                if origin != nil && origin?.name != "" && origin?.name != "unknow" {
-                    PersonLocationViewItem(image: "DarkLocation", name: "Origin", desc: origin!.name, url: origin!.url)
-                }
-                if location != nil && location?.name != "" && location?.name != "unknow" {
-                    PersonLocationViewItem(image: "LightLocation", name: "Last location", desc: location!.name, url: location!.url)
+        
+        if origin?.name != "unknown" && location?.name != "unknown" {
+            VStack(alignment: .leading, spacing: 21) {
+                Text("Locations")
+                    .font(.system(size: 30, weight: .bold))
+                
+                LazyVGrid(columns: columns) {
+                    if origin != nil, origin?.name != "unknown", let name = origin?.name, let url = origin?.url {
+                        PersonLocationViewItem(image: "DarkLocation", name: "Origin", desc: name, url: url)
+                    }
+                    
+                    if location != nil, location?.name != "unknown", let name = location?.name, let url = location?.url {
+                        PersonLocationViewItem(image: "LightLocation", name: "Last location", desc: name, url: url)
+                    }
                 }
             }
         }
@@ -43,10 +47,11 @@ struct PersonLocationViewItem: View {
             // TODO: Routing to LocationViewController
         } label: {
             VStack(alignment: .leading, spacing: 10) {
-                Image(image)
+                Image(imageExists(imageName: desc) ? desc : "DarkLocation")
                     .resizable()
                     .frame(height: 81)
                     .frame(maxWidth: .infinity)
+                    .scaledToFit()
                     .cornerRadius(10)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(name)
