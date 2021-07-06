@@ -30,10 +30,8 @@
 		C85751BB2657EAAD002C187D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85751B92657EAAD002C187D /* LaunchScreen.storyboard */; };
 		C857FF5E2660DFD700AD220D /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C857FF5D2660DFD700AD220D /* CarouselView.swift */; };
 		C857FF612660E05300AD220D /* CarouselContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C857FF602660E05300AD220D /* CarouselContentView.swift */; };
-		C857FF66266109B200AD220D /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C857FF65266109B200AD220D /* LocationCardView.swift */; };
 		C857FF682661114B00AD220D /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C857FF672661114B00AD220D /* CustomTabBar.swift */; };
 		C86BD234267CA4390040A924 /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BD233267CA4390040A924 /* PersonCardView.swift */; };
-		C86BD237267CBDA70040A924 /* String + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BD236267CBDA70040A924 /* String + Ex.swift */; };
 		C86BD23A267CCDB30040A924 /* PersonInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BD239267CCDB30040A924 /* PersonInformationView.swift */; };
 		C86BD23C267CCDF30040A924 /* PersonLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BD23B267CCDF30040A924 /* PersonLocationView.swift */; };
 		C89260092671373F002589A2 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89260082671373F002589A2 /* SearchBarView.swift */; };
@@ -42,6 +40,8 @@
 		C892601026714DEC002589A2 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C892600F26714DEC002589A2 /* ViewModifiers.swift */; };
 		C8A2A170265D4DDA0032CF57 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A2A16F265D4DDA0032CF57 /* NetworkService.swift */; };
 		C8A2A173265D4E1D0032CF57 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A2A172265D4E1D0032CF57 /* DataFetcher.swift */; };
+		C8ADE81C2693AEC00042AC49 /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE81B2693AEC00042AC49 /* LocationCardView.swift */; };
+		C8ADE81E269443F20042AC49 /* ResidentsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE81D269443F20042AC49 /* ResidentsCardView.swift */; };
 		C8F17759267A166B00A8394D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F17758267A166B00A8394D /* HomeView.swift */; };
 		C8F17761267A268600A8394D /* TabBarRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F17760267A268600A8394D /* TabBarRouterView.swift */; };
 /* End PBXBuildFile section */
@@ -72,10 +72,8 @@
 		C85751BC2657EAAD002C187D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C857FF5D2660DFD700AD220D /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		C857FF602660E05300AD220D /* CarouselContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselContentView.swift; sourceTree = "<group>"; };
-		C857FF65266109B200AD220D /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
 		C857FF672661114B00AD220D /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		C86BD233267CA4390040A924 /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
-		C86BD236267CBDA70040A924 /* String + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ex.swift"; sourceTree = "<group>"; };
 		C86BD239267CCDB30040A924 /* PersonInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationView.swift; sourceTree = "<group>"; };
 		C86BD23B267CCDF30040A924 /* PersonLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonLocationView.swift; sourceTree = "<group>"; };
 		C89260082671373F002589A2 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -84,6 +82,8 @@
 		C892600F26714DEC002589A2 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		C8A2A16F265D4DDA0032CF57 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C8A2A172265D4E1D0032CF57 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		C8ADE81B2693AEC00042AC49 /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
+		C8ADE81D269443F20042AC49 /* ResidentsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentsCardView.swift; sourceTree = "<group>"; };
 		C8F17758267A166B00A8394D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C8F17760267A268600A8394D /* TabBarRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouterView.swift; sourceTree = "<group>"; };
 		D05E114E77F57C765589416E /* Pods-Rick&Morty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick&Morty.release.xcconfig"; path = "Target Support Files/Pods-Rick&Morty/Pods-Rick&Morty.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,7 +146,8 @@
 		C83C35E82684A55800556302 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				C857FF65266109B200AD220D /* LocationCardView.swift */,
+				C8ADE81B2693AEC00042AC49 /* LocationCardView.swift */,
+				C8ADE81D269443F20042AC49 /* ResidentsCardView.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -252,7 +253,6 @@
 		C86BD235267CBD960040A924 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C86BD236267CBDA70040A924 /* String + Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -434,9 +434,9 @@
 				C8495CF326736D240072FDC8 /* Episode.swift in Sources */,
 				C81CE1B8266B945E009D7315 /* TabCurve.swift in Sources */,
 				C81CE1BB266B9A51009D7315 /* SearchView.swift in Sources */,
+				C8ADE81E269443F20042AC49 /* ResidentsCardView.swift in Sources */,
 				C86BD234267CA4390040A924 /* PersonCardView.swift in Sources */,
 				C892600B267149FB002589A2 /* FilterMenuView.swift in Sources */,
-				C86BD237267CBDA70040A924 /* String + Ex.swift in Sources */,
 				C83C35EA2684A79D00556302 /* PersonView.swift in Sources */,
 				C8A2A173265D4E1D0032CF57 /* DataFetcher.swift in Sources */,
 				C82D0E3E267A463000F5B0C9 /* Strings.swift in Sources */,
@@ -445,7 +445,6 @@
 				C81CE1B6266B9430009D7315 /* TabBarButtons.swift in Sources */,
 				C8F17759267A166B00A8394D /* HomeView.swift in Sources */,
 				C85751B12657EAAC002C187D /* SceneDelegate.swift in Sources */,
-				C857FF66266109B200AD220D /* LocationCardView.swift in Sources */,
 				C892600E26714C1A002589A2 /* HeaderView.swift in Sources */,
 				C892601026714DEC002589A2 /* ViewModifiers.swift in Sources */,
 				C86BD23C267CCDF30040A924 /* PersonLocationView.swift in Sources */,
@@ -454,6 +453,7 @@
 				C8A2A170265D4DDA0032CF57 /* NetworkService.swift in Sources */,
 				C8F17761267A268600A8394D /* TabBarRouterView.swift in Sources */,
 				C857FF612660E05300AD220D /* CarouselContentView.swift in Sources */,
+				C8ADE81C2693AEC00042AC49 /* LocationCardView.swift in Sources */,
 				C80CF16D26873A5C00CA3375 /* LocationBlockView.swift in Sources */,
 				C80CF1712689E75800CA3375 /* ImageExists.swift in Sources */,
 			);

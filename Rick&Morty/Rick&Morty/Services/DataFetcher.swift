@@ -18,6 +18,10 @@ struct DataFetcherServices {
         NetworkService.fetchData(urlString: self.urlString, decodeType: .all, completion: completion)
     }
     
+    func fetchRandomPersons(completion: @escaping ([Person]?) -> Void) {
+        fetchRandom(url: self.urlString, count: 671, decodeType: .random, completion: completion)
+    }
+    
     func fetchPerson(id: Int, completion: @escaping (Person?) -> Void) {
         let urlString = urlString + "/" + String(id)
         NetworkService.fetchData(urlString: urlString, decodeType: .person, completion: completion)
@@ -28,6 +32,11 @@ struct DataFetcherServices {
     }
     
     //MARK: Location
+    
+    func fetchRandomLocations(completion: @escaping ([Location]?) -> Void) {
+        fetchRandom(url: self.urlStringLocation, count: 108, decodeType: .randomLocations, completion: completion)
+    }
+    
     func fetchLocation(id: Int, completion: @escaping (Location?) -> Void) {
         let url = urlStringLocation + "/" + String(id)
         NetworkService.fetchData(urlString: url, decodeType: .location, completion: completion)
@@ -39,13 +48,6 @@ struct DataFetcherServices {
     }
     
     //MARK: Random
-    func fetchRandomPersons(completion: @escaping ([Person]?) -> Void) {
-        fetchRandom(url: self.urlString, count: 671, decodeType: .random, completion: completion)
-    }
-    
-    func fetchRandomLocations(completion: @escaping ([Location]?) -> Void) {
-        fetchRandom(url: self.urlStringLocation, count: 108, decodeType: .randomLocations, completion: completion)
-    }
     
     func fetchRandom<T>(url: String, count: Int, decodeType: DecodeType, completion: @escaping ([T]?) -> Void) {
         var urlString = ""

@@ -54,7 +54,7 @@ final class PersonCardViewModel: ObservableObject {
 //MARK: - View
 struct PersonCardView: View {
     @Binding var id: Int?
-    @ObservedObject var viewModel = PersonCardViewModel()
+    @StateObject var viewModel = PersonCardViewModel()
     
     var body: some View {
         ZStack(alignment: .top) {

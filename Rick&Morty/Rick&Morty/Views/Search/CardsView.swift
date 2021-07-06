@@ -32,7 +32,7 @@ final class CardsViewModel: ObservableObject {
 //MARK: - View
 struct CardsView: View {
     @Binding var searchText: String
-    @ObservedObject var viewModel = CardsViewModel()
+    @StateObject var viewModel = CardsViewModel()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {

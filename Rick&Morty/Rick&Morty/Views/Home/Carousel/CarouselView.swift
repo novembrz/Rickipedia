@@ -24,12 +24,16 @@ final class CarouselBlockViewModel: ObservableObject {
             }
         }
     }
+    
+    func deletePersons() {
+        persons.removeAll()
+    }
 }
 
 //MARK: - View
 
 struct CarouselBlockView: View {
-    @ObservedObject var viewModel: CarouselBlockViewModel
+    @StateObject var viewModel: CarouselBlockViewModel
     
     var body: some View {
         ZStack {
@@ -84,6 +88,7 @@ struct CarouselBlockView: View {
         .padding(.horizontal, 25)
         .padding(.top, 25)
         .onAppear() { viewModel.getPersons() }
+        .onDisappear() { viewModel.deletePersons() }
         if viewModel.isLoading { LoadingView() }
     }
 }

@@ -24,7 +24,7 @@ final class CarouselViewModel: ObservableObject {
 
 //MARK: - View
 struct CarouselContentView: View {
-    @ObservedObject var viewModel: CarouselViewModel
+    @StateObject var viewModel: CarouselViewModel
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {

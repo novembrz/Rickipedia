@@ -10,6 +10,8 @@ import SwiftUI
 final class LocationBlockViewModel: ObservableObject {
     
     @Published var locations: [Location] = []
+    @Published var location: Location?
+    @Published var url: String?
     
     func getLocations() {
         DataFetcherServices().fetchRandomLocations { [self] result in
@@ -23,7 +25,8 @@ final class LocationBlockViewModel: ObservableObject {
 
 struct LocationBlockView: View {
     
-    @ObservedObject var viewModel = LocationBlockViewModel()
+    @StateObject var viewModel = LocationBlockViewModel()
+    @State var isPresented = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -33,25 +36,37 @@ struct LocationBlockView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 18) {
-                    
                     ForEach(viewModel.locations, id: \.self) { location in
-                        VStack(alignment: .leading, spacing: 8) {
-                            Image(imageExists(imageName: location.name) ? location.name : "DarkLocation")
-                                .resizable()
-                                .frame(width: 151, height: 81)
-                                .scaledToFit()
-                                .cornerRadius(10)
-                            
-                            Text(location.name)
-                                .multilineTextAlignment(.leading)
-                                .font(.system(size: 20, weight: .medium))
-                                .frame(maxWidth: 151)
-                                .lineLimit(2)
+                        if location.name != "unknow" {
+                            Button {
+                                viewModel.url = location.url
+                                isPresented.toggle()
+                            } label: {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Image(imageExists(imageName: location.name) ? location.name : "DarkLocation")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 151, height: 81)
+                                        .cornerRadius(10)
+                                    
+                                    Text(location.name)
+                                        .multilineTextAlignment(.leading)
+                                        .font(.system(size: 20, weight: .medium))
+                                        .frame(maxWidth: 151)
+                                        .lineLimit(2)
+                                }
+                            }
+                            .sheet(isPresented: $isPresented) {
+                                LocationCardView(url: $viewModel.url)
+                                //LocationCardView(url: $viewModel.url)
+                                //LocationCardView()
+                            }
                         }
                     }
                 }
             }
         }
+        .padding(.bottom, 20)
         .onAppear() {
             viewModel.getLocations()
         }

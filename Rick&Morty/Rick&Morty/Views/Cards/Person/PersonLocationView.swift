@@ -16,18 +16,18 @@ struct PersonLocationView: View {
     
     var body: some View {
         
-        if origin?.name != "unknown" && location?.name != "unknown" {
+        if origin?.name != nil || location?.name != nil {
             VStack(alignment: .leading, spacing: 21) {
                 Text("Locations")
                     .font(.system(size: 30, weight: .bold))
                 
                 LazyVGrid(columns: columns) {
                     if origin != nil, origin?.name != "unknown", let name = origin?.name, let url = origin?.url {
-                        PersonLocationViewItem(image: "DarkLocation", name: "Origin", desc: name, url: url)
+                        PersonLocationViewItem(type: "Origin", locationName: name, url: url)
                     }
                     
                     if location != nil, location?.name != "unknown", let name = location?.name, let url = location?.url {
-                        PersonLocationViewItem(image: "LightLocation", name: "Last location", desc: name, url: url)
+                        PersonLocationViewItem(type: "Last location", locationName: name, url: url)
                     }
                 }
             }
@@ -37,9 +37,8 @@ struct PersonLocationView: View {
 
 //MARK: Item
 struct PersonLocationViewItem: View {
-    var image: String
-    var name: String
-    var desc: String
+    var type: String
+    var locationName: String
     var url: String
     
     var body: some View {
@@ -47,16 +46,16 @@ struct PersonLocationViewItem: View {
             // TODO: Routing to LocationViewController
         } label: {
             VStack(alignment: .leading, spacing: 10) {
-                Image(imageExists(imageName: desc) ? desc : "DarkLocation")
+                Image(imageExists(imageName: locationName) ? locationName : "DarkLocation")
                     .resizable()
+                    .aspectRatio(contentMode: .fill)
                     .frame(height: 81)
                     .frame(maxWidth: .infinity)
-                    .scaledToFit()
                     .cornerRadius(10)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(name)
+                    Text(type)
                         .font(.system(size: 20, weight: .medium))
-                    Text(desc)
+                    Text(locationName)
                         .font(.system(size: 16, weight: .regular))
                         .lineLimit(1)
                 }

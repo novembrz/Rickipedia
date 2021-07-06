@@ -24,7 +24,7 @@ final class FilterMenuViewModel: ObservableObject {
 //MARK: - View
 struct FilterMenuView: View {
     @Binding var categories: [String]
-    @ObservedObject var viewModel = FilterMenuViewModel()
+    @StateObject var viewModel = FilterMenuViewModel()
     
     var body: some View {
         HStack(spacing: 22) {

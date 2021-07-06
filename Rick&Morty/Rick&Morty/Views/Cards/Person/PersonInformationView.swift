@@ -30,12 +30,12 @@ struct PersonInformationView: View {
                         .frame(width: 7, height: 7)
                         .foregroundColor(getColor(person.status))
                     
-                    Text(person.status.firstUppercased)
+                    Text(person.status.capitalized)
                         .font(.system(size: 20, weight: .regular))
                 }
             }
             
-            LazyVGrid(columns: columns, spacing: 20) {
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 20) {
                 PersonInformationViewItem(image: "marsian", desc: person.species)
                 PersonInformationViewItem(image: "gender", desc: person.gender)
                 PersonInformationViewItem(image: "tentacles", desc: person.type)
