@@ -15,11 +15,14 @@
 		C81CE1B6266B9430009D7315 /* TabBarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CE1B5266B9430009D7315 /* TabBarButtons.swift */; };
 		C81CE1B8266B945E009D7315 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CE1B7266B945E009D7315 /* TabCurve.swift */; };
 		C81CE1BB266B9A51009D7315 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CE1BA266B9A51009D7315 /* SearchView.swift */; };
+<<<<<<< HEAD
 		C82D0E3E267A463000F5B0C9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82D0E3D267A463000F5B0C9 /* Strings.swift */; };
 		C82D0E40267A469400F5B0C9 /* SizeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82D0E3F267A469400F5B0C9 /* SizeGenerator.swift */; };
 		C83C35E726848C0A00556302 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83C35E626848C0A00556302 /* LoadingView.swift */; };
 		C83C35EA2684A79D00556302 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83C35E92684A79D00556302 /* PersonView.swift */; };
 		C83C35EC2684AA9E00556302 /* HeaderButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83C35EB2684AA9E00556302 /* HeaderButtonsView.swift */; };
+=======
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
 		C840074A265A9B9B007FED36 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8400749265A9B9B007FED36 /* Person.swift */; };
 		C8495CF126736C140072FDC8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8495CF026736C140072FDC8 /* Location.swift */; };
 		C8495CF326736D240072FDC8 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8495CF226736D240072FDC8 /* Episode.swift */; };
@@ -43,7 +46,8 @@
 		C8ADE81C2693AEC00042AC49 /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE81B2693AEC00042AC49 /* LocationCardView.swift */; };
 		C8ADE81E269443F20042AC49 /* ResidentsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ADE81D269443F20042AC49 /* ResidentsCardView.swift */; };
 		C8F17759267A166B00A8394D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F17758267A166B00A8394D /* HomeView.swift */; };
-		C8F17761267A268600A8394D /* TabBarRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F17760267A268600A8394D /* TabBarRouterView.swift */; };
+		C8F17761267A268600A8394D /* NewTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F17760267A268600A8394D /* NewTabBarView.swift */; };
+		C8F17763267A26B300A8394D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F17762267A26B300A8394D /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,11 +59,14 @@
 		C81CE1B5266B9430009D7315 /* TabBarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButtons.swift; sourceTree = "<group>"; };
 		C81CE1B7266B945E009D7315 /* TabCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
 		C81CE1BA266B9A51009D7315 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		C82D0E3D267A463000F5B0C9 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		C82D0E3F267A469400F5B0C9 /* SizeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeGenerator.swift; sourceTree = "<group>"; };
 		C83C35E626848C0A00556302 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C83C35E92684A79D00556302 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		C83C35EB2684AA9E00556302 /* HeaderButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderButtonsView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
 		C8400749265A9B9B007FED36 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C8495CF026736C140072FDC8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C8495CF226736D240072FDC8 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -85,7 +92,8 @@
 		C8ADE81B2693AEC00042AC49 /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
 		C8ADE81D269443F20042AC49 /* ResidentsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentsCardView.swift; sourceTree = "<group>"; };
 		C8F17758267A166B00A8394D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		C8F17760267A268600A8394D /* TabBarRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouterView.swift; sourceTree = "<group>"; };
+		C8F17760267A268600A8394D /* NewTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabBarView.swift; sourceTree = "<group>"; };
+		C8F17762267A26B300A8394D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D05E114E77F57C765589416E /* Pods-Rick&Morty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick&Morty.release.xcconfig"; path = "Target Support Files/Pods-Rick&Morty/Pods-Rick&Morty.release.xcconfig"; sourceTree = "<group>"; };
 		DE4EACE7A033F8C268F73372 /* Pods-Rick&Morty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rick&Morty.debug.xcconfig"; path = "Target Support Files/Pods-Rick&Morty/Pods-Rick&Morty.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +121,8 @@
 		C81CE1B2266B936E009D7315 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				C8F17760267A268600A8394D /* TabBarRouterView.swift */,
+				C8F17760267A268600A8394D /* NewTabBarView.swift */,
+				C8F17762267A26B300A8394D /* Router.swift */,
 				C857FF672661114B00AD220D /* CustomTabBar.swift */,
 				C81CE1B5266B9430009D7315 /* TabBarButtons.swift */,
 				C81CE1B7266B945E009D7315 /* TabCurve.swift */,
@@ -132,6 +141,7 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		C82D0E3C267A462300F5B0C9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +162,8 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
 		C8400748265A9B92007FED36 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +199,6 @@
 				C8E3D67D2657EF3300859921 /* Services */,
 				C8400748265A9B92007FED36 /* Models */,
 				C8A2A179265E2D0C0032CF57 /* Views */,
-				C82D0E3C267A462300F5B0C9 /* Helpers */,
 				C85751C52657EAC5002C187D /* Supporting files */,
 				C85751B62657EAAD002C187D /* Preview Content */,
 			);
@@ -424,7 +435,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C80756A326723A5F00A05E60 /* CardsView.swift in Sources */,
-				C82D0E40267A469400F5B0C9 /* SizeGenerator.swift in Sources */,
 				C857FF5E2660DFD700AD220D /* CarouselView.swift in Sources */,
 				C83C35EC2684AA9E00556302 /* HeaderButtonsView.swift in Sources */,
 				C840074A265A9B9B007FED36 /* Person.swift in Sources */,
@@ -439,19 +449,28 @@
 				C892600B267149FB002589A2 /* FilterMenuView.swift in Sources */,
 				C83C35EA2684A79D00556302 /* PersonView.swift in Sources */,
 				C8A2A173265D4E1D0032CF57 /* DataFetcher.swift in Sources */,
-				C82D0E3E267A463000F5B0C9 /* Strings.swift in Sources */,
 				C85751AF2657EAAC002C187D /* AppDelegate.swift in Sources */,
 				C89260092671373F002589A2 /* SearchBarView.swift in Sources */,
 				C81CE1B6266B9430009D7315 /* TabBarButtons.swift in Sources */,
 				C8F17759267A166B00A8394D /* HomeView.swift in Sources */,
 				C85751B12657EAAC002C187D /* SceneDelegate.swift in Sources */,
+<<<<<<< HEAD
+=======
+				C857FF66266109B200AD220D /* LocationCardView.swift in Sources */,
+				C8F17763267A26B300A8394D /* Router.swift in Sources */,
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
 				C892600E26714C1A002589A2 /* HeaderView.swift in Sources */,
 				C892601026714DEC002589A2 /* ViewModifiers.swift in Sources */,
 				C86BD23C267CCDF30040A924 /* PersonLocationView.swift in Sources */,
 				C8495CF126736C140072FDC8 /* Location.swift in Sources */,
 				C86BD23A267CCDB30040A924 /* PersonInformationView.swift in Sources */,
 				C8A2A170265D4DDA0032CF57 /* NetworkService.swift in Sources */,
+<<<<<<< HEAD
 				C8F17761267A268600A8394D /* TabBarRouterView.swift in Sources */,
+=======
+				C857FF632661036200AD220D /* PersonCardView.swift in Sources */,
+				C8F17761267A268600A8394D /* NewTabBarView.swift in Sources */,
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
 				C857FF612660E05300AD220D /* CarouselContentView.swift in Sources */,
 				C8ADE81C2693AEC00042AC49 /* LocationCardView.swift in Sources */,
 				C80CF16D26873A5C00CA3375 /* LocationBlockView.swift in Sources */,
