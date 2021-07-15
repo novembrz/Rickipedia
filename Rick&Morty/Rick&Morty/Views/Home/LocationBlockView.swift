@@ -58,8 +58,6 @@ struct LocationBlockView: View {
                             }
                             .sheet(isPresented: $isPresented) {
                                 LocationCardView(url: $viewModel.url)
-                                //LocationCardView(url: $viewModel.url)
-                                //LocationCardView()
                             }
                         }
                     }

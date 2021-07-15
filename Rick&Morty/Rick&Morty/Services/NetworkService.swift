@@ -11,6 +11,7 @@ import SwiftyJSON
 enum DecodeType {
     case all
     case random
+    case residents
     case randomLocations
     case person
     case location
@@ -18,7 +19,7 @@ enum DecodeType {
 
 struct NetworkService {
     
-    static func fetchData<T>(urlString: String, decodeType: DecodeType, completion: @escaping (T?) -> Void) {
+    static func fetchData<T>(urlString: String, count: Int?, decodeType: DecodeType, completion: @escaping (T?) -> Void) {
         
         guard let url = URL(string: urlString) else {return}
         
@@ -41,6 +42,9 @@ struct NetworkService {
                 completion(persons as? T)
             case .random:
                 let persons = NetworkParser.appendPersons(from: json.arrayValue, count: 8)
+                completion(persons as? T)
+            case .residents:
+                let persons = NetworkParser.appendPersons(from: json.arrayValue, count: count!)
                 completion(persons as? T)
             case .randomLocations:
                 let locations = NetworkParser.appendLocations(from: json.arrayValue, count: 8)

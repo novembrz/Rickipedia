@@ -24,10 +24,6 @@ final class CarouselBlockViewModel: ObservableObject {
             }
         }
     }
-    
-    func deletePersons() {
-        persons.removeAll()
-    }
 }
 
 //MARK: - View
@@ -37,9 +33,9 @@ struct CarouselBlockView: View {
     
     var body: some View {
         ZStack {
-            ForEach(viewModel.persons.reversed()) { person in //persons.indices.reversed()
+            ForEach(viewModel.persons.reversed()) { person in 
                 HStack {
-                    CarouselContentView(viewModel: CarouselViewModel(person: person, scrolled: viewModel.scrolled))
+                    CarouselContentView(viewModel: CarouselContentViewModel(), person: person, scrolled: viewModel.scrolled)
                 }
                 .contentShape(Rectangle())
                 
@@ -55,7 +51,6 @@ struct CarouselBlockView: View {
                                 viewModel.persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60) + value.translation.width
                             }
                         }
-                        
                     }
                 }).onEnded({ (value) in
                     
@@ -88,7 +83,6 @@ struct CarouselBlockView: View {
         .padding(.horizontal, 25)
         .padding(.top, 25)
         .onAppear() { viewModel.getPersons() }
-        .onDisappear() { viewModel.deletePersons() }
         if viewModel.isLoading { LoadingView() }
     }
 }

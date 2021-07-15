@@ -12,13 +12,16 @@ import Kingfisher
 
 final class LocationCardViewModel: ObservableObject {
     @Published var location: Location?
+    @Published var residents: [String]?
+    @Published var isLoading = false
     
     func getLocation(url: String?) {
+        //self.isLoading = true
         DataFetcherServices().fetchCurrentLocation(url: url ?? "") { result in
             DispatchQueue.main.async {
                 guard let location = result else {return}
                 self.location = location
-                print("🐯🐯🐯", location)
+                self.residents = location.residents
             }
         }
     }
@@ -30,6 +33,7 @@ struct LocationCardView: View {
     
     @StateObject var viewModel = LocationCardViewModel()
     @Binding var url: String?
+    //var url: String = "https://rickandmortyapi.com/api/location/13"
     
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
@@ -66,7 +70,7 @@ struct LocationCardView: View {
                         
                         Spacer()
                         
-                        ResidentsCardView()
+                        ResidentsCardView(residents: viewModel.residents ?? [""])
                     }
                 }
             }
@@ -77,3 +81,10 @@ struct LocationCardView: View {
         .onAppear() { viewModel.getLocation(url: url) }
     }
 }
+
+//MARK: - Previews
+//struct LocationCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LocationCardView(viewModel: LocationCardViewModel())
+//    }
+//}
