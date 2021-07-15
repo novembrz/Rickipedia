@@ -16,6 +16,7 @@ struct SearchBarView: View {
             HStack { //MARK: Search TF
                 TextField(viewModel.randomString(), text: $viewModel.searchText)
                     .colorInvert()
+                    .disableAutocorrection(true)
                     .foregroundColor(.black)
                     .accentColor(Color("accentPink"))
                     .padding(.leading, 28)
@@ -51,14 +52,8 @@ struct SearchBarView: View {
             //MARK: Cancel
             if viewModel.isSearching {
                 Button {
-<<<<<<< HEAD
                     viewModel.isSearching = false
                     viewModel.searchText = ""
-=======
-                    isSearching = false
-                    searchText = ""
-                    
->>>>>>> parent of fa54670 (Refactored the NetworkService)
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 } label: {
                     Text("Cancel")

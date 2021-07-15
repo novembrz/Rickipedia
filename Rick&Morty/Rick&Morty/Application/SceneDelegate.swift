@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         //let contentView = SearchView(viewModel: SearchViewModel())
         //let contentView = HomeView()
-        let contentView = NewTabBarView(viewRouter: Router())
+        let contentView = TabBarRouterView(viewRouter: Router())
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
