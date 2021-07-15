@@ -12,9 +12,12 @@ struct TabBarButtons: View {
     
     @StateObject var viewRouter: Router
     let assignedPage: Page
+    
     var image: String
     @Binding var selectedTab: String
     @Binding var tabPoints: [CGFloat]
+    @State var shouldShowModal = false //?
+    @State var name: String? // delete
     
     var body: some View {
         GeometryReader { reader -> AnyView in
@@ -28,6 +31,7 @@ struct TabBarButtons: View {
             }
             return AnyView (
                 Button {
+                    shouldShowModal.toggle()
                     withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.5, blendDuration: 0.5)) {
                         selectedTab = image
                     }
@@ -42,6 +46,12 @@ struct TabBarButtons: View {
                 .onTapGesture {
                     viewRouter.currentPage = assignedPage
                 }
+//                .sheet(isPresented: $shouldShowModal) {
+//                    ScrollView {
+//                        Text("TEST")
+//                    }
+//
+//                }
             )
         }
         .frame(height: 35) //maxheight

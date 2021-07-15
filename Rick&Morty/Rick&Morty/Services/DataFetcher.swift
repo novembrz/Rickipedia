@@ -9,6 +9,7 @@ import Foundation
 
 struct DataFetcherServices {
     
+<<<<<<< HEAD
     private var urlString = "https://rickandmortyapi.com/api/character"
     private var urlStringLocation = "https://rickandmortyapi.com/api/location"
     private var urlStringEpisode = "https://rickandmortyapi.com/api/episode"
@@ -59,13 +60,26 @@ struct DataFetcherServices {
     //MARK: Random
     
     func fetchRandom<T>(url: String, count: Int, decodeType: DecodeType, completion: @escaping ([T]?) -> Void) {
+=======
+    static func fetchAllPersons(completion: @escaping ([Person]?) -> Void) {
+        let urlString = "https://rickandmortyapi.com/api/character"
+        NetworkService.fetchData(urlString: urlString, decodeType: .all, completion: completion)
+    }
+    
+    static func fetchRandomPersons(completion: @escaping ([Person]?) -> Void) {
+
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
         var urlString = ""
         
         for _ in 0..<8 {
             let randomInt = Int.random(in: 0..<count)
             
             if urlString == "" {
+<<<<<<< HEAD
                 urlString = url + "/" + String(randomInt)
+=======
+                urlString = "https://rickandmortyapi.com/api/character/\(randomInt)"
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
             } else {
                 urlString += ",\(randomInt)"
             }

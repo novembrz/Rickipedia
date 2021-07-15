@@ -48,7 +48,11 @@ struct CarouselBlockView: View {
                             viewModel.persons[person.index].offset = value.translation.width
                         } else {
                             if person.index > 0 {
+<<<<<<< HEAD
                                 viewModel.persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60) + value.translation.width
+=======
+                                persons[person.index - 1].offset = -(calculateWidth() + 60) + value.translation.width
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
                             }
                         }
                     }
@@ -57,9 +61,15 @@ struct CarouselBlockView: View {
                     withAnimation {
                         if value.translation.width < 0 {
                             //движение карт
+<<<<<<< HEAD
                             if -value.translation.width > 180 && person.index != viewModel.persons.last!.index {
                                 viewModel.persons[person.index].offset = -(SizeGenerator.calculateWidth() + 60)
                                 viewModel.scrolled += 1
+=======
+                            if -value.translation.width > 180 && person.index != persons.last!.index {
+                                persons[person.index].offset = -(calculateWidth() + 60)
+                                scrolled += 1
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
                             } else {
                                 viewModel.persons[person.index].offset = 0
                             }
@@ -71,7 +81,11 @@ struct CarouselBlockView: View {
                                     viewModel.persons[person.index - 1].offset = 0
                                     viewModel.scrolled -= 1
                                 } else {
+<<<<<<< HEAD
                                     viewModel.persons[person.index - 1].offset = -(SizeGenerator.calculateWidth() + 60)
+=======
+                                    persons[person.index - 1].offset = -(calculateWidth() + 60)
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
                                 }
                             }
                         }
@@ -79,13 +93,31 @@ struct CarouselBlockView: View {
                 }))
             }
         }
-        .frame(height: SizeGenerator.height)
+        .frame(height: height)
         .padding(.horizontal, 25)
         .padding(.top, 25)
+<<<<<<< HEAD
         .onAppear() { viewModel.getPersons() }
         if viewModel.isLoading { LoadingView() }
+=======
+        .onAppear() {
+            DataFetcherServices.fetchRandomPersons { personArray in
+                guard let persons = personArray else {return}
+                self.persons = persons
+                print("🦖🦖🦖", persons)
+            }
+        }
+>>>>>>> parent of fa54670 (Refactored the NetworkService)
     }
 }
+
+
+func calculateWidth() -> CGFloat {
+    let screen = UIScreen.main.bounds.width - 50 // 50 hor padding
+    return screen - (2 * 30)
+}
+var height = UIScreen.main.bounds.height / 1.8
+
 
 struct CarouselBlock_Previews: PreviewProvider {
     static var previews: some View {
