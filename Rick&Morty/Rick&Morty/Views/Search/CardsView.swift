@@ -40,7 +40,7 @@ struct CardsView: View {
                 ForEach((viewModel.persons).filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.self) { person in
                     
                     VStack(spacing: 13) {
-                        KFImage(URL(string: person.image ?? defaultImageUrl))
+                        KFImage(URL(string: person.image ?? AppData.defaultImageUrl))
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 90, height: 90)
@@ -52,10 +52,8 @@ struct CardsView: View {
                     }
                     .frame(maxWidth: .infinity, idealHeight: 150)
                     .onTapGesture {
-                        withAnimation(.spring()) {
-                            viewModel.id = person.id
-                            viewModel.showCard.toggle()
-                        }
+                        viewModel.id = person.id
+                        viewModel.showCard.toggle()
                     }.sheet(isPresented: $viewModel.showCard) {
                         PersonCardView(id: $viewModel.id)
                     }

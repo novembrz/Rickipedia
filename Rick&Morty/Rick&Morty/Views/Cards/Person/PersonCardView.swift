@@ -20,7 +20,7 @@ final class PersonCardViewModel: ObservableObject {
     func getPerson(id: Int?) {
         DataFetcherServices().fetchPerson(id: id ?? 1) { result in
             DispatchQueue.main.async {
-                guard let person = result else {return}
+                guard let person = result?[0] else {return}
                 self.person = person
                 self.getLocation()
                 self.getOrigin()
@@ -30,9 +30,9 @@ final class PersonCardViewModel: ObservableObject {
     
     func getLocation() {
         if let locationURL = person?.location?.url {
-            DataFetcherServices().fetchCurrentLocation(url: locationURL) { result in
+            DataFetcherServices().fetchLocation(url: locationURL) { result in
                 DispatchQueue.main.async {
-                    guard let location = result else {return}
+                    guard let location = result?[0] else {return}
                     self.location = location
                 }
             }
@@ -41,9 +41,9 @@ final class PersonCardViewModel: ObservableObject {
     
     func getOrigin() {
         if let originURL = person?.origin?.url {
-            DataFetcherServices().fetchCurrentLocation(url: originURL) { result in
+            DataFetcherServices().fetchLocation(url: originURL) { result in
                 DispatchQueue.main.async {
-                    guard let origin = result else {return}
+                    guard let origin = result?[0] else {return}
                     self.origin = origin
                 }
             }
@@ -53,6 +53,7 @@ final class PersonCardViewModel: ObservableObject {
 
 //MARK: - View
 struct PersonCardView: View {
+    //var id = 1
     @Binding var id: Int?
     @StateObject var viewModel = PersonCardViewModel()
     
@@ -61,19 +62,25 @@ struct PersonCardView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 //MARK: Parallax
                 GeometryReader { reader in
-                    KFImage(URL(string: viewModel.person?.image ?? defaultImageUrl))
+                    KFImage(URL(string: viewModel.person?.image ?? AppData.defaultImageUrl))
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .offset(y: -reader.frame(in: .global).minY)
                         .frame(width: UIScreen.main.bounds.width,
                                height: reader.frame(in: .global).minY + viewModel.maxHeigth)
+                    
+                    Image("bottomLinerGradient")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .offset(y: -reader.frame(in: .global).minY)
+                        .frame(width: UIScreen.main.bounds.width, height: reader.frame(in: .global).minY + viewModel.maxHeigth)
                 }
                 .frame(height: viewModel.maxHeigth)
                 
-                PersonView(person: viewModel.person ??
-                            Person(index: 0, id: 0, name: "", image: "", status: "", species: "", type: "", gender: "", url: "", origin: PersonOrigin(name: "", url: ""), location: PersonLocation(name: "", url: ""), episode: []),
+                PersonView(person: viewModel.person ?? AppData.person,
                            location: viewModel.location,
                            origin: viewModel.origin)
+                    .offset(y: -50)
             }
             .background(Color("GrayElementColor"))
             .edgesIgnoringSafeArea(.all)
@@ -81,7 +88,7 @@ struct PersonCardView: View {
                 viewModel.getPerson(id: id)
             }
             
-            HeaderButtonsView()
+            HeaderButtonsView(needFav: true)
         }
     }
 }

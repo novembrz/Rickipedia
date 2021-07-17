@@ -16,10 +16,9 @@ final class LocationCardViewModel: ObservableObject {
     @Published var isLoading = false
     
     func getLocation(url: String?) {
-        //self.isLoading = true
-        DataFetcherServices().fetchCurrentLocation(url: url ?? "") { result in
+        DataFetcherServices().fetchLocation(url: url ?? "") { result in
             DispatchQueue.main.async {
-                guard let location = result else {return}
+                guard let location = result?[0] else {return}
                 self.location = location
                 self.residents = location.residents
             }
@@ -56,7 +55,7 @@ struct LocationCardView: View {
                     
                     VStack {
                         VStack(alignment: .leading) {
-                            HeaderButtonsView()
+                            HeaderButtonsView(needFav: true)
                             
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(location.name)

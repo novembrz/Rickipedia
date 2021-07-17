@@ -7,9 +7,7 @@
 
 import Foundation
 
-struct Episode: Identifiable {
-    var uuID = UUID() //var uuID = UUID().uuidString
-    
+struct Episode: Identifiable, Hashable {
     let id: Int
     let name: String
     let date: String //"air_date"

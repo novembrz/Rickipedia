@@ -9,12 +9,10 @@ import Foundation
 import SwiftyJSON
 
 enum DecodeType {
-    case all
+    case persons
     case random
-    case residents
-    case randomLocations
-    case person
-    case location
+    case locations
+    case episodes
 }
 
 struct NetworkService {
@@ -37,24 +35,36 @@ struct NetworkService {
             guard let json = try? JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers) else {return}
             
             switch decodeType {
-            case .all:
-                let persons = NetworkParser.appendPersons(from: json["results"].arrayValue, count: 20)
-                completion(persons as? T)
-            case .random:
-                let persons = NetworkParser.appendPersons(from: json.arrayValue, count: 8)
-                completion(persons as? T)
-            case .residents:
+            case .random: //остается
                 let persons = NetworkParser.appendPersons(from: json.arrayValue, count: count!)
                 completion(persons as? T)
-            case .randomLocations:
-                let locations = NetworkParser.appendLocations(from: json.arrayValue, count: 8)
-                completion(locations as? T)
-            case .person:
-                let person = NetworkParser.appendOnePerson(from: json)
-                completion(person as? T)
-            case .location:
-                let location = NetworkParser.appendOneLocation(from: json)
-                completion(location as? T)
+            case .persons:
+                if count == nil {
+                    let persons = NetworkParser.appendPersons(from: json["results"].arrayValue, count: 20)
+                    completion(persons as? T)
+                } else if count == 1 {
+                    let person = NetworkParser.appendPersons(from: json, count: count!)
+                    completion(person as? T)
+                } else {
+                    let persons = NetworkParser.appendPersons(from: json.arrayValue, count: count!)
+                    completion(persons as? T)
+                }
+            case .locations:
+                if count == 1 {
+                    let location = NetworkParser.appendLocations(from: json, count: count!)
+                    completion(location as? T)
+                } else {
+                    let locations = NetworkParser.appendLocations(from: json.arrayValue, count: 8)
+                    completion(locations as? T)
+                }
+            case .episodes:
+                if count == 1 {
+                    let episodes = NetworkParser.appendEpisodes(from: json, count: count!)
+                    completion(episodes as? T)
+                } else {
+                    let episodes = NetworkParser.appendEpisodes(from: json.arrayValue, count: count!)
+                    completion(episodes as? T)
+                }
             }
         }
         task.resume()

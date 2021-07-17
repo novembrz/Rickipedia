@@ -10,6 +10,7 @@ import SwiftUI
 struct HeaderButtonsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var isFav = false
+    @State var needFav: Bool
     
     var body: some View {
         HStack() {
@@ -21,16 +22,20 @@ struct HeaderButtonsView: View {
                     .frame(width: 9, height: 18)
                     .foregroundColor(.white)
             }
+            
             Spacer()
-            Button {
-                // TODO: Add to favourite Person and Location
-                isFav.toggle()
-            } label: {
-                Image(isFav ? "heart.fill" : "heart")
-                    .resizable()
-                    .frame(width: 30, height: 30)
+            
+            if needFav == true{
+                Button {
+                    // TODO: Add to favourite Person and Location
+                    isFav.toggle()
+                } label: {
+                    Image(isFav ? "heart.fill" : "heart")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                }
+                .animation(.spring())
             }
-            .animation(.spring())
         }
         .padding()
     }

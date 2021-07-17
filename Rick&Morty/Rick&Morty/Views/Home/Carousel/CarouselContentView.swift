@@ -11,6 +11,7 @@ import Kingfisher
 
 final class CarouselContentViewModel: ObservableObject {
     @Published var showCard = false
+    @Published var showFav = false
     @Published var id: Int?
 }
 
@@ -23,7 +24,7 @@ struct CarouselContentView: View {
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
-                KFImage(URL(string: person.image ?? defaultImageUrl))
+            KFImage(URL(string: person.image ?? AppData.defaultImageUrl))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     //динамический фрейм
@@ -41,7 +42,7 @@ struct CarouselContentView: View {
                 }
                 
                 Button {
-                    //Add to fav
+                    viewModel.showFav = true
                 } label: {
                     Text("􀊵 Add to Favorites")
                         .font(.caption)
@@ -59,15 +60,15 @@ struct CarouselContentView: View {
         }
         .offset(x: person.index - scrolled <= 2 ? CGFloat(person.index - scrolled) * 30 : 60)
         .onTapGesture {
-            withAnimation(.spring()) {
-                viewModel.id = person.id
-                viewModel.showCard.toggle()
-            }
+            viewModel.id = person.id
+            viewModel.showCard.toggle()
         }
         .sheet(isPresented: $viewModel.showCard) {
             PersonCardView(id: $viewModel.id)
         }
-        
+        .sheet(isPresented: $viewModel.showFav) {
+            
+        }
         Spacer(minLength: 0)
     }
 

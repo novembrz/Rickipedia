@@ -8,13 +8,15 @@
 import SwiftUI
 import Kingfisher
 
-class ResidentsCardViewModel: ObservableObject {
+final class ResidentsCardViewModel: ObservableObject {
     @Published var residentsAr: [Person]?
+    @Published var id: Int?
     @Published var isLoading = false
+    @Published var showCard = false
     
     func getResidents(residents: [String]) {
         isLoading = true
-        StringsConvert().makeOneURL(urls: residents) { url, count in
+        StringsConvert().makeOneURL(urls: residents, type: .char) { url, count in
             DataFetcherServices().fetchResidents(url: url, count: count) { result in
                 DispatchQueue.main.async {
                     //self.isLoading = false
@@ -33,7 +35,6 @@ struct ResidentsCardView: View {
     
     var residents: [String]
     let width = UIScreen.main.bounds.width
-    let person = [Person(index: 0, id: 0, name: "", image: "", status: "", species: "", type: "", gender: "", url: "", origin: PersonOrigin(name: "", url: ""), location: PersonLocation(name: "", url: ""), episode: [])]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -45,12 +46,13 @@ struct ResidentsCardView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 16) {
-                    ForEach(viewModel.residentsAr ?? person, id: \.self) { person in
+                    ForEach(viewModel.residentsAr ?? [AppData.person], id: \.self) { person in
                         Button {
-                            
+                            viewModel.showCard = true
+                            viewModel.id = person.id
                         } label: {
                             VStack(spacing: 10) {
-                                (viewModel.isLoading ? KFImage(URL(string: defaultImageUrl)) : KFImage(URL(string: person.image ?? defaultImageUrl)))
+                                (viewModel.isLoading ? KFImage(URL(string: AppData.defaultImageUrl)) : KFImage(URL(string: person.image ?? AppData.defaultImageUrl)))
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: width / 4.2, height: width / 4.2)
@@ -63,7 +65,11 @@ struct ResidentsCardView: View {
                                     .frame(width: width / 4.2)
                             }
                         }
+                        .sheet(isPresented: $viewModel.showCard) {
+                            PersonCardView(id: $viewModel.id)
+                        }
                     }
+                    
                 }
                 .padding(.horizontal, 25)
             }

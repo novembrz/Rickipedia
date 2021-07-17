@@ -34,6 +34,8 @@
 		C86BD234267CA4390040A924 /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BD233267CA4390040A924 /* PersonCardView.swift */; };
 		C86BD23A267CCDB30040A924 /* PersonInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BD239267CCDB30040A924 /* PersonInformationView.swift */; };
 		C86BD23C267CCDF30040A924 /* PersonLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BD23B267CCDF30040A924 /* PersonLocationView.swift */; };
+		C87692A626A0CB7800A11BB7 /* EpisodeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87692A526A0CB7800A11BB7 /* EpisodeCardView.swift */; };
+		C88D0C3F26A3938400635D8E /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D0C3E26A3938400635D8E /* AppData.swift */; };
 		C89260092671373F002589A2 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89260082671373F002589A2 /* SearchBarView.swift */; };
 		C892600B267149FB002589A2 /* FilterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C892600A267149FB002589A2 /* FilterMenuView.swift */; };
 		C892600E26714C1A002589A2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C892600D26714C1A002589A2 /* HeaderView.swift */; };
@@ -76,6 +78,8 @@
 		C86BD233267CA4390040A924 /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
 		C86BD239267CCDB30040A924 /* PersonInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationView.swift; sourceTree = "<group>"; };
 		C86BD23B267CCDF30040A924 /* PersonLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonLocationView.swift; sourceTree = "<group>"; };
+		C87692A526A0CB7800A11BB7 /* EpisodeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCardView.swift; sourceTree = "<group>"; };
+		C88D0C3E26A3938400635D8E /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		C89260082671373F002589A2 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		C892600A267149FB002589A2 /* FilterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMenuView.swift; sourceTree = "<group>"; };
 		C892600D26714C1A002589A2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		C82D0E3C267A462300F5B0C9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C88D0C3E26A3938400635D8E /* AppData.swift */,
 				C82D0E3D267A463000F5B0C9 /* String + Extension.swift */,
 				C82D0E3F267A469400F5B0C9 /* SizeGenerator.swift */,
 				C80CF1702689E75800CA3375 /* ImageExists.swift */,
@@ -244,6 +249,7 @@
 			children = (
 				C86BD238267CCD5F0040A924 /* Person */,
 				C83C35E82684A55800556302 /* Location */,
+				C87692A426A0CB5200A11BB7 /* Episode */,
 				C83C35EB2684AA9E00556302 /* HeaderButtonsView.swift */,
 			);
 			path = Cards;
@@ -258,6 +264,14 @@
 				C86BD23B267CCDF30040A924 /* PersonLocationView.swift */,
 			);
 			path = Person;
+			sourceTree = "<group>";
+		};
+		C87692A426A0CB5200A11BB7 /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				C87692A526A0CB7800A11BB7 /* EpisodeCardView.swift */,
+			);
+			path = Episode;
 			sourceTree = "<group>";
 		};
 		C892600C26714C0B002589A2 /* Global & Helpers */ = {
@@ -445,9 +459,11 @@
 				C8A2A170265D4DDA0032CF57 /* NetworkService.swift in Sources */,
 				C8F17761267A268600A8394D /* TabBarRouterView.swift in Sources */,
 				C857FF612660E05300AD220D /* CarouselContentView.swift in Sources */,
+				C87692A626A0CB7800A11BB7 /* EpisodeCardView.swift in Sources */,
 				C8ADE81C2693AEC00042AC49 /* LocationCardView.swift in Sources */,
 				C80CF16D26873A5C00CA3375 /* LocationBlockView.swift in Sources */,
 				C80CF1712689E75800CA3375 /* ImageExists.swift in Sources */,
+				C88D0C3F26A3938400635D8E /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

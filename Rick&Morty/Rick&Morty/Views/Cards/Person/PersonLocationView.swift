@@ -23,11 +23,11 @@ struct PersonLocationView: View {
                 
                 LazyVGrid(columns: columns) {
                     if origin != nil, origin?.name != "unknown", let name = origin?.name, let url = origin?.url {
-                        PersonLocationViewItem(type: "Origin", locationName: name, url: url)
+                        PersonLocationViewItem(url: url, type: "Origin", locationName: name)
                     }
                     
                     if location != nil, location?.name != "unknown", let name = location?.name, let url = location?.url {
-                        PersonLocationViewItem(type: "Last location", locationName: name, url: url)
+                        PersonLocationViewItem(url: url, type: "Last location", locationName: name)
                     }
                 }
             }
@@ -36,14 +36,23 @@ struct PersonLocationView: View {
 }
 
 //MARK: Item
+
+class PersonLocationViewModelItem: ObservableObject {
+    @Published var url: String?
+    @Published var showCard = false
+}
+
 struct PersonLocationViewItem: View {
+    @StateObject var viewModel = PersonLocationViewModelItem()
+    
+    var url: String
     var type: String
     var locationName: String
-    var url: String
     
     var body: some View {
         Button {
-            // TODO: Routing to LocationViewController
+            viewModel.showCard = true
+            viewModel.url = url
         } label: {
             VStack(alignment: .leading, spacing: 10) {
                 Image(imageExists(imageName: locationName) ? locationName : "DarkLocation")
@@ -60,6 +69,9 @@ struct PersonLocationViewItem: View {
                         .lineLimit(1)
                 }
             }
+        }
+        .sheet(isPresented: $viewModel.showCard) {
+            LocationCardView(viewModel: LocationCardViewModel(), url: $viewModel.url)
         }
     }
 }

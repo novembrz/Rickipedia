@@ -13,10 +13,10 @@ struct DataFetcherServices {
     private var urlStringLocation = "https://rickandmortyapi.com/api/location"
     private var urlStringEpisode = "https://rickandmortyapi.com/api/episode"
     
-    //MARK: Person
+    //MARK: - Person
     //все персонажи, по 20 каждый запрос
     func fetchAllPersons(completion: @escaping ([Person]?) -> Void) {
-        NetworkService.fetchData(urlString: self.urlString, count: nil, decodeType: .all, completion: completion)
+        NetworkService.fetchData(urlString: self.urlString, count: nil, decodeType: .persons, completion: completion)
     }
     
     //рандомные песроны, в юрл указываешь id тех кто нужен
@@ -26,37 +26,38 @@ struct DataFetcherServices {
     
     //конкретные персонажи
     func fetchResidents(url: String, count: Int, completion: @escaping ([Person]?) -> Void) {
-        NetworkService.fetchData(urlString: url, count: count, decodeType: .residents, completion: completion)
+        NetworkService.fetchData(urlString: url, count: count, decodeType: .persons, completion: completion)
     }
     
     //персонаж по id
-    func fetchPerson(id: Int, completion: @escaping (Person?) -> Void) {
+    func fetchPerson(id: Int, completion: @escaping ([Person]?) -> Void) {
         let urlString = urlString + "/" + String(id)
-        NetworkService.fetchData(urlString: urlString, count: nil, decodeType: .person, completion: completion)
+        NetworkService.fetchData(urlString: urlString, count: 1, decodeType: .persons, completion: completion)
     }
     
     //персонаж по url
-    func fetchCurrentPerson(url: String, completion: @escaping (Person?) -> Void) {
-        NetworkService.fetchData(urlString: urlString, count: nil, decodeType: .person, completion: completion)
+    func fetchCurrentPerson(url: String, completion: @escaping ([Person]?) -> Void) {
+        NetworkService.fetchData(urlString: urlString, count: 1, decodeType: .persons, completion: completion)
     }
     
-    //MARK: Location
-    
+    //MARK: - Location
+    //много рандомных
     func fetchRandomLocations(completion: @escaping ([Location]?) -> Void) {
-        fetchRandom(url: self.urlStringLocation, count: 108, decodeType: .randomLocations, completion: completion)
+        fetchRandom(url: self.urlStringLocation, count: 108, decodeType: .locations, completion: completion)
     }
     
-    func fetchLocation(id: Int, completion: @escaping (Location?) -> Void) {
-        let url = urlStringLocation + "/" + String(id)
-        NetworkService.fetchData(urlString: url, count: nil, decodeType: .location, completion: completion)
+    //одна локация
+    func fetchLocation(url: String, completion: @escaping ([Location]?) -> Void) {
+        NetworkService.fetchData(urlString: url, count: 1, decodeType: .locations, completion: completion)
     }
     
-    func fetchCurrentLocation(url: String, completion: @escaping (Location?) -> Void) {
-
-        NetworkService.fetchData(urlString: url, count: nil, decodeType: .location, completion: completion)
+    //MARK: - Episode
+    
+    func fetchEpisodes(url: String, count: Int, completion: @escaping ([Episode]?) -> Void) {
+        NetworkService.fetchData(urlString: url, count: count, decodeType: .episodes, completion: completion)
     }
     
-    //MARK: Random
+    //MARK: - Random
     
     func fetchRandom<T>(url: String, count: Int, decodeType: DecodeType, completion: @escaping ([T]?) -> Void) {
         var urlString = ""
@@ -70,6 +71,6 @@ struct DataFetcherServices {
                 urlString += ",\(randomInt)"
             }
         }
-        NetworkService.fetchData(urlString: urlString, count: nil, decodeType: decodeType, completion: completion)
+        NetworkService.fetchData(urlString: urlString, count: 8, decodeType: decodeType, completion: completion)
     }
 }
