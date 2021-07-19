@@ -26,7 +26,6 @@ struct TabBarRouterView: View {
     var body: some View {
         GeometryReader { geometry in //возможность знать ширину и высоту  ContentView в  зависимости от конкретного устройства
             VStack {
-                Spacer()
                 switch selectedTab {
                 case "house":
                     HomeView()
@@ -39,12 +38,11 @@ struct TabBarRouterView: View {
                 default:
                     Text("Error")
                 }
-                Spacer()
                 
                 CustomTabBar(viewRouter: viewRouter, selectedTab: $selectedTab)
             }
-            .viewSettings()
         }
+        .viewSettings()
     }
 }
 
@@ -54,13 +52,13 @@ struct DefaultView_Previews: PreviewProvider {
     }
 }
 
- struct CustomTabBarTempApp: App {
-     
-     @StateObject var viewRouter = Router()
-     
-     var body: some Scene {
-         WindowGroup {
-            TabBarRouterView(viewRouter: viewRouter)
-         }
-     }
- }
+// struct CustomTabBarTempApp: App {
+//     
+//     @StateObject var viewRouter = Router()
+//     
+//     var body: some Scene {
+//         WindowGroup {
+//            TabBarRouterView(viewRouter: viewRouter)
+//         }
+//     }
+// }

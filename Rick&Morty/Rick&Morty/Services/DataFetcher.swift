@@ -61,16 +61,17 @@ struct DataFetcherServices {
     
     func fetchRandom<T>(url: String, count: Int, decodeType: DecodeType, completion: @escaping ([T]?) -> Void) {
         var urlString = ""
+        var countIter = 0
         
         for _ in 0..<8 {
-            let randomInt = Int.random(in: 0..<count)
-            
+            let randomInt = Int.random(in: 0...count)
+            countIter += 1
             if urlString == "" {
                 urlString = url + "/" + String(randomInt)
             } else {
                 urlString += ",\(randomInt)"
             }
         }
-        NetworkService.fetchData(urlString: urlString, count: 8, decodeType: decodeType, completion: completion)
+        NetworkService.fetchData(urlString: urlString, count: countIter, decodeType: decodeType, completion: completion)
     }
 }

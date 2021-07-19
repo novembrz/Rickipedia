@@ -23,7 +23,7 @@ struct SearchBarView: View {
                     .frame(height: 10)
             }
             .padding()
-            .background(Color.gray.opacity(0.3))
+            .background(Color("GrayElementColor"))
             .cornerRadius(10)
             .onTapGesture {
                 viewModel.isSearching = true

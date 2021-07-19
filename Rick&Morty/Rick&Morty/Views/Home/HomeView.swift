@@ -21,6 +21,7 @@ struct HomeView: View {
                 }
                 LocationBlockView(viewModel: LocationBlockViewModel())
             }
+            .padding(.top, 60)
         }
     }
 }

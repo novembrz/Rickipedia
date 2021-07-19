@@ -51,10 +51,10 @@ struct NetworkService {
                 }
             case .locations:
                 if count == 1 {
-                    let location = NetworkParser.appendLocations(from: json, count: count!)
+                    let location = NetworkParser.appendLocations(from: json)
                     completion(location as? T)
                 } else {
-                    let locations = NetworkParser.appendLocations(from: json.arrayValue, count: 8)
+                    let locations = NetworkParser.appendLocations(from: json.arrayValue)
                     completion(locations as? T)
                 }
             case .episodes:

@@ -59,6 +59,7 @@ struct CardsView: View {
                     }
                 }
             }
+            .padding(.top, 200)
         }
         .animation(.easeIn)
         .transition(.move(edge: .top))

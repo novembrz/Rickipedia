@@ -309,9 +309,9 @@
 			isa = PBXGroup;
 			children = (
 				C8B452E226A5738D002E7AE9 /* FavouriteView.swift */,
-				C8B452E826A581CE002E7AE9 /* CustomSegmented.swift */,
 				C8B452E426A5748C002E7AE9 /* PersonsFavouriteView.swift */,
 				C8B452E626A57496002E7AE9 /* LocationsFavouriteView.swift */,
+				C8B452E826A581CE002E7AE9 /* CustomSegmented.swift */,
 			);
 			path = Favourite;
 			sourceTree = "<group>";

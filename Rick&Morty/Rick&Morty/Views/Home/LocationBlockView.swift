@@ -37,7 +37,7 @@ struct LocationBlockView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 18) {
                     ForEach(viewModel.locations, id: \.self) { location in
-                        if location.name != "unknow" {
+                        //if location.name != "unknow" {
                             Button {
                                 viewModel.url = location.url
                                 isPresented.toggle()
@@ -59,7 +59,7 @@ struct LocationBlockView: View {
                             .sheet(isPresented: $isPresented) {
                                 LocationCardView(url: $viewModel.url)
                             }
-                        }
+                        //}
                     }
                 }
             }

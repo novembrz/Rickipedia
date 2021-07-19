@@ -12,7 +12,6 @@ struct ViewSettings: ViewModifier {
         content
             .foregroundColor(.white)
             .padding()
-            .padding(.top, 60)
             .background(Color("GrayBgColor"))
             .edgesIgnoringSafeArea(.all)
     }

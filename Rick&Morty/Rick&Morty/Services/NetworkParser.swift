@@ -67,21 +67,12 @@ final class NetworkParser {
     }
     
     //MARK: Decode Locations
-    static func appendLocations<T>(from json: T?, count: Int) -> [Location] {
+    static func appendLocations<T>(from json: T?) -> [Location] {
+
         var locations: [Location] = []
-        if count == 1 {
-            guard let json = json as? JSON else { return [AppData.location] }
-            let id = json["id"].intValue
-            let name = json["name"].stringValue
-            let type = json["type"].stringValue
-            let dimension = json["dimension"].stringValue
-            let url = json["url"].stringValue
-            let residents: [String] = json["residents"].arrayValue.map { $0.stringValue}
-            
-            locations.append(Location(id: id, name: name, type: type, dimension: dimension, url: url, residents: residents))
-        } else {
-            for i in 0..<count {
-                guard let json = json as? [JSON] else { return [AppData.location] }
+        
+        if let json = json as? [JSON] {
+            for i in 0..<json.count {
                 let name = json[i]["name"].stringValue
                 let id = json[i]["id"].intValue
                 let type = json[i]["type"].stringValue
@@ -91,7 +82,17 @@ final class NetworkParser {
                 
                 locations.append(Location(id: id, name: name, type: type, dimension: dimension, url: url, residents: residents))
             }
+        } else if let json = json as? JSON {
+            let id = json["id"].intValue
+            let name = json["name"].stringValue
+            let type = json["type"].stringValue
+            let dimension = json["dimension"].stringValue
+            let url = json["url"].stringValue
+            let residents: [String] = json["residents"].arrayValue.map { $0.stringValue}
+            
+            locations.append(Location(id: id, name: name, type: type, dimension: dimension, url: url, residents: residents))
         }
+        
         return locations
     }
     

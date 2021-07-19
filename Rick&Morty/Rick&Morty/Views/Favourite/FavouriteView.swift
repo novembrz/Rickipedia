@@ -12,24 +12,27 @@ struct FavouriteView: View {
     @State var segmented = 0
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 45) {
-            HStack {
-                Text("Favourite")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                
-                Spacer()
-                
-                CustomSegmented(selected: $segmented)
-            }
-            
+        ZStack {
             if segmented == 0 {
                 PersonsFavouriteView()
             } else if segmented == 1 {
                 LocationsFavouriteView()
             }
             
-            Spacer()
+            VStack {
+                HStack {
+                    Text("Favourite")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                    
+                    Spacer()
+                    
+                    CustomSegmented(selected: $segmented)
+                }
+                .padding(.top, 60)
+                
+                Spacer()
+            }
         }
     }
 }

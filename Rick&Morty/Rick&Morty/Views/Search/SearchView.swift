@@ -28,15 +28,20 @@ struct SearchView: View {
     @ObservedObject var viewModel: SearchViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 35) {
-            HeaderView(title: "search".uppercased(), isPerformed: $viewModel.isMenuOpen)
-            SearchBarView(viewModel: SearchViewModel())
-            
-            if viewModel.isMenuOpen {
-                FilterMenuView(categories: $viewModel.filterCategories)
-            }
-
+        ZStack {
             CardsView(searchText: $viewModel.searchText)
+            
+            VStack(alignment: .leading, spacing: 20) {
+                HeaderView(title: "search".uppercased(), isPerformed: $viewModel.isMenuOpen)
+                SearchBarView(viewModel: SearchViewModel())
+                
+                if viewModel.isMenuOpen {
+                    FilterMenuView(categories: $viewModel.filterCategories)
+                }
+                
+                Spacer()
+            }
+            .padding(.top, 60)
         }
     }
 }
