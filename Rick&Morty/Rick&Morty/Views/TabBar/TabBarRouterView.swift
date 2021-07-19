@@ -33,7 +33,7 @@ struct TabBarRouterView: View {
                 case "eye":
                     SearchView(viewModel: SearchViewModel())
                 case "suit.heart":
-                    Text("Liked")
+                    FavouriteView()
                 case "person":
                     Text("Profile")
                 default:

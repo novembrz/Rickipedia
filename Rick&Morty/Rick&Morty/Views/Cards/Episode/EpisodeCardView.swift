@@ -24,6 +24,8 @@ final class EpisodeCardViewModel: ObservableObject {
 struct EpisodeCardView: View {
     
     @StateObject var viewModel = EpisodeCardViewModel()
+//    var urls: String = "https://rickandmortyapi.com/api/episode/1,2,3,4,5,6"
+//    var count: Int = 6
     @Binding var urls: String
     @Binding var count: Int
     
@@ -36,17 +38,20 @@ struct EpisodeCardView: View {
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                 
-                SearchBarView(viewModel: SearchViewModel())
-                
                 ScrollView(.vertical, showsIndicators: false) {
-                    
-                    ForEach(0...10, id: \.self) { episode in
-                        HStack {
-                            Text("\(episode)")
-                                .padding()
+                    VStack(spacing: 15) {
+                        ForEach(viewModel.episodes ?? [AppData.episode], id: \.self) { episode in
+                            HStack {
+                                Text(episode.name)
+                                    .font(.system(size: 18, weight: .medium))
+                                    .lineLimit(2)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 225, alignment: .leading)
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 21)
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
                         .background(Color("GrayElementColor"))
                         .cornerRadius(11)
                     }
