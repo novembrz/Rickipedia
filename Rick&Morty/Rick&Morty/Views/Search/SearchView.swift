@@ -41,7 +41,7 @@ struct SearchView: View {
                 
                 Spacer()
             }
-            .padding(.top, 60)
+            .padding(.top, UIScreen.main.bounds.size.height / 17.5)
         }
     }
 }

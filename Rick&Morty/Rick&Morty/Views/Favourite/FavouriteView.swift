@@ -29,7 +29,7 @@ struct FavouriteView: View {
                     
                     CustomSegmented(selected: $segmented)
                 }
-                .padding(.top, 60)
+                .padding(.top, UIScreen.main.bounds.size.height / 17.5)
                 
                 Spacer()
             }

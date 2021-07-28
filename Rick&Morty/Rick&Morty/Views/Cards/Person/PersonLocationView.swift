@@ -71,7 +71,7 @@ struct PersonLocationViewItem: View {
             }
         }
         .sheet(isPresented: $viewModel.showCard) {
-            LocationCardView(viewModel: LocationCardViewModel(), url: $viewModel.url)
+            LocationEpisodeCardView(viewModel: LocationEpisodeCardViewModel(), url: $viewModel.url, type: .location)
         }
     }
 }
