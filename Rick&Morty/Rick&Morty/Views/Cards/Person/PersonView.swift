@@ -33,7 +33,6 @@ struct PersonView: View {
                         self.urls = urls
                         self.count = count
                         showView = true
-                        print("🦆🦆🦆", urls, count)
                     }
                 } label: {
                     Text("See person's episodes".uppercased())

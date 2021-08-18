@@ -34,7 +34,7 @@ struct TabBarRouterView: View {
                 case "suit.heart":
                     FavouriteView()
                 case "person":
-                    Text("Profile")
+                    ProfileView()
                 default:
                     Text("Error")
                 }

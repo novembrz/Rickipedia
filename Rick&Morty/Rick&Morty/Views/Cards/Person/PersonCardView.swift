@@ -57,6 +57,8 @@ struct PersonCardView: View {
     @Binding var id: Int?
     @StateObject var viewModel = PersonCardViewModel()
     
+    @State var selectedTab = "house"
+    
     var body: some View {
         ZStack(alignment: .top) {
             ScrollView(.vertical, showsIndicators: false) {

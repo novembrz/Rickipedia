@@ -26,17 +26,18 @@ struct NetworkService {
             
             guard let data = data else {//, let response = response else {
                 if let error = error {
-                    print("💔Error get data", error.localizedDescription)
+                    print("💔Error get data: ", error.localizedDescription)
                 }
                 return
             }
-            //print("💡Network responce", response)
+            //print("💡Network responce: ", response)
             
             guard let json = try? JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers) else {return}
             
             switch decodeType {
             case .random: //остается
                 let persons = NetworkParser.appendPersons(from: json.arrayValue, count: count!)
+                print("🦊🦊🦊", persons)
                 completion(persons as? T)
             case .persons:
                 if count == nil {

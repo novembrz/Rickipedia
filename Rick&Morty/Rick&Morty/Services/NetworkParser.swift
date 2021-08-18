@@ -30,17 +30,18 @@ final class NetworkParser {
             var origin: PersonOrigin? = PersonOrigin(name: "", url: "")
             var location: PersonLocation? = PersonLocation(name: "", url: "")
             
-            if let originUrl = json["origin"]["url"].string, let originName = json["origin"]["name"].string{
+            if let originUrl = json["origin"]["url"].string, let originName = json["origin"]["name"].string {
                 origin = PersonOrigin(name: originName, url: originUrl)
             }
-            if let locationUrl = json["location"]["url"].string, let locationName = json["location"]["name"].string{
+            if let locationUrl = json["location"]["url"].string, let locationName = json["location"]["name"].string {
                 location = PersonLocation(name: locationName, url: locationUrl)
             }
             
             persons.append(Person(index: 0, id: id, name: name, image: image, status: status, species: species, type: type, gender: gender, url: url, origin: origin, location: location, episode: episode))
         } else {
+            guard let json = json as? [JSON] else { return [AppData.person] }
             for i in 0..<count {
-                guard let json = json as? [JSON] else { return [AppData.person] }
+                
                 let name = json[i]["name"].stringValue
                 let id = json[i]["id"].intValue
                 let image = json[i]["image"].stringValue
@@ -54,15 +55,16 @@ final class NetworkParser {
                 var origin: PersonOrigin? = PersonOrigin(name: "", url: "")
                 var location: PersonLocation? = PersonLocation(name: "", url: "")
                 
-                if let originUrl = json[i]["origin"]["url"].string, let originName = json[i]["origin"]["name"].string{
+                if let originUrl = json[i]["origin"]["url"].string, let originName = json[i]["origin"]["name"].string {
                     origin = PersonOrigin(name: originName, url: originUrl)
                 }
-                if let locationUrl = json[i]["location"]["url"].string, let locationName = json[i]["location"]["name"].string{
+                if let locationUrl = json[i]["location"]["url"].string, let locationName = json[i]["location"]["name"].string {
                     location = PersonLocation(name: locationName, url: locationUrl)
                 }
                 persons.append(Person(index: i, id: id, name: name, image: image, status: status, species: species, type: type, gender: gender, url: url, origin: origin, location: location, episode: episode))
             }
         }
+        print("🦋🦋🦋", persons)
         return persons
     }
     
