@@ -16,5 +16,6 @@ struct LocationsFavouriteView: View {
 struct LocationsFavouriteView_Previews: PreviewProvider {
     static var previews: some View {
         LocationsFavouriteView()
+            .viewSettings()
     }
 }

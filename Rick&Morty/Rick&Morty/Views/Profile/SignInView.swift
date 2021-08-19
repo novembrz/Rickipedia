@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignInView: View {
     
+    var addCloseButton: Bool
+    
     var width = UIScreen.main.bounds.width
     var height = UIScreen.main.bounds.height
     
@@ -17,15 +19,17 @@ struct SignInView: View {
     var body: some View {
         VStack {
             VStack(spacing: height / 15) {
-                VStack(alignment: .leading, spacing: height / 12) {
+                VStack(alignment: .leading, spacing: addCloseButton ? height / 12 : height / 10) {
                     VStack(alignment: .leading, spacing: height / 20) {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "xmark")
-                                .resizable()
-                                .foregroundColor(.white)
-                                .frame(width: 18, height: 18)
+                        if addCloseButton {
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .resizable()
+                                    .foregroundColor(.white)
+                                    .frame(width: 18, height: 18)
+                            }
                         }
                         
                         Text("Sign in")
@@ -37,9 +41,11 @@ struct SignInView: View {
                         CustomTextField(placeholder: "Phone / E-mail", imageName: "rocket")
                         CustomTextField(placeholder: "Password", imageName: "galaxy")
                         
-                        Text("Forgot password?")
-                            .font(.system(size: 16, weight: .medium))
-                            .foregroundColor(.white)
+                        Button {} label: {
+                            Text("Forgot password?")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.white)
+                        }
                     }
                 }
                 
@@ -68,13 +74,13 @@ struct SignInView: View {
             
             Spacer()
         }
-        .padding(.top, UIScreen.main.bounds.size.height / 17.5)
-        .viewSettings()
+        .padding(.top, addCloseButton ? 25 : height / 11)
     }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(addCloseButton: false)
+            .viewSettings()
     }
 }

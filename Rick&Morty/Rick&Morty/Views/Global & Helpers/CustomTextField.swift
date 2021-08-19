@@ -61,6 +61,7 @@ struct CustomTextField: View {
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(addCloseButton: false)
+            .viewSettings()
     }
 }

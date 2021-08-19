@@ -21,7 +21,6 @@ final class CarouselBlockViewModel: ObservableObject {
                 isLoading = false
                 guard let personArray = result else {return}
                 persons = personArray
-                print("🐠🐠🐠", result)
             }
         }
     }

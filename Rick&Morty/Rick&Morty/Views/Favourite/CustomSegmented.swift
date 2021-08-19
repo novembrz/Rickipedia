@@ -52,5 +52,6 @@ struct CustomSegmented: View {
 struct CustomSegmented_Previews: PreviewProvider {
     static var previews: some View {
         FavouriteView()
+            .viewSettings()
     }
 }

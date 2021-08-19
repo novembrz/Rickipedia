@@ -1,13 +1,15 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  Rick&Morty
 //
-//  Created by dasha on 17.08.2021.
+//  Created by dasha on 18.08.2021.
 //
 
 import SwiftUI
 
 struct SignUpView: View {
+    
+    var addCloseButton: Bool
     
     var width = UIScreen.main.bounds.width
     var height = UIScreen.main.bounds.height
@@ -16,27 +18,31 @@ struct SignUpView: View {
     
     var body: some View {
         VStack {
-            VStack(alignment: .leading, spacing: height / 12) {
-                VStack(alignment: .leading, spacing: height / 20) {
-                    Button {
+            VStack(spacing: height / 15) {
+                VStack(alignment: .leading, spacing: addCloseButton ? height / 12 : height / 10) {
+                    VStack(alignment: .leading, spacing: height / 20) {
+                        if addCloseButton {
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .resizable()
+                                    .foregroundColor(.white)
+                                    .frame(width: 18, height: 18)
+                            }
+                        }
                         
-                    } label: {
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: 18, height: 18)
+                        Text("Sign up")
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
                     }
                     
-                    Text("Sign up")
-                        .font(.largeTitle)
-                        .fontWeight(.heavy)
-                }
-                
-                VStack(spacing: 40) {
-                    CustomTextField(placeholder: "Your name", imageName: "marsian")
-                    CustomTextField(placeholder: "Phone / E-mail", imageName: "rocket")
-                    CustomTextField(placeholder: "Password", imageName: "galaxy")
-                    CustomTextField(placeholder: "Confirm password", imageName: "galaxy")
+                    VStack(alignment: .trailing, spacing: 37) {
+                        CustomTextField(placeholder: "Your name", imageName: "marsian")
+                        CustomTextField(placeholder: "Phone / E-mail", imageName: "rocket")
+                        CustomTextField(placeholder: "Password", imageName: "galaxy")
+                        CustomTextField(placeholder: "Confirm password", imageName: "galaxy")
+                    }
                 }
                 
                 VStack(spacing: 27) {
@@ -53,7 +59,7 @@ struct SignUpView: View {
                         }
                     }
                     
-                    VStack(alignment: .center, spacing: 21) {
+                    VStack(spacing: 21) {
                         Text("Or register via social networks")
                             .font(.system(size: 16, weight: .regular))
                             .foregroundColor(.white)
@@ -69,15 +75,16 @@ struct SignUpView: View {
                     }
                 }
             }
+            
             Spacer()
         }
-        .padding(.top, height / 30)
-        .viewSettings()
+        .padding(.top, addCloseButton ? 25 : height / 11)
     }
 }
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(addCloseButton: false)
+            .viewSettings()
     }
 }

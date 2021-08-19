@@ -72,5 +72,6 @@ struct CardsView: View {
 struct CardsView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(viewModel: SearchViewModel())
+            .viewSettings()
     }
 }

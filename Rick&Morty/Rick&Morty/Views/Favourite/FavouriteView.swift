@@ -40,5 +40,6 @@ struct FavouriteView: View {
 struct FavouriteView_Previews: PreviewProvider {
     static var previews: some View {
         FavouriteView()
+            .viewSettings()
     }
 }

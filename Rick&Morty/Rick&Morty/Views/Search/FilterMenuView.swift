@@ -52,5 +52,6 @@ struct FilterMenuView: View {
 struct FilterMenuView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(viewModel: SearchViewModel())
+            .viewSettings()
     }
 }
