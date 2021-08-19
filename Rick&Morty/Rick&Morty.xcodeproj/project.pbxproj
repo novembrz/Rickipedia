@@ -50,6 +50,7 @@
 		C8B452E526A5748C002E7AE9 /* PersonsFavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B452E426A5748C002E7AE9 /* PersonsFavouriteView.swift */; };
 		C8B452E726A57496002E7AE9 /* LocationsFavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B452E626A57496002E7AE9 /* LocationsFavouriteView.swift */; };
 		C8B452E926A581CE002E7AE9 /* CustomSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B452E826A581CE002E7AE9 /* CustomSegmented.swift */; };
+		C8B5749226CEEF86004C9722 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8B5749126CEEF86004C9722 /* GoogleService-Info.plist */; };
 		C8BF56B326CD106500855DDA /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF56B226CD106500855DDA /* LoginPageView.swift */; };
 		C8BF56B526CD184600855DDA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF56B426CD184600855DDA /* SignUpView.swift */; };
 		C8C35FE426CC79B00045ABC4 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C35FE326CC79B00045ABC4 /* SignInView.swift */; };
@@ -104,6 +105,7 @@
 		C8B452E426A5748C002E7AE9 /* PersonsFavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsFavouriteView.swift; sourceTree = "<group>"; };
 		C8B452E626A57496002E7AE9 /* LocationsFavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFavouriteView.swift; sourceTree = "<group>"; };
 		C8B452E826A581CE002E7AE9 /* CustomSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmented.swift; sourceTree = "<group>"; };
+		C8B5749126CEEF86004C9722 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8BF56B226CD106500855DDA /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		C8BF56B426CD184600855DDA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C8C35FE326CC79B00045ABC4 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				C85751B42657EAAD002C187D /* Assets.xcassets */,
 				C85751B92657EAAD002C187D /* LaunchScreen.storyboard */,
+				C8B5749126CEEF86004C9722 /* GoogleService-Info.plist */,
 				C85751BC2657EAAD002C187D /* Info.plist */,
 			);
 			path = "Supporting files";
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C85751BB2657EAAD002C187D /* LaunchScreen.storyboard in Resources */,
+				C8B5749226CEEF86004C9722 /* GoogleService-Info.plist in Resources */,
 				C85751B82657EAAD002C187D /* Preview Assets.xcassets in Resources */,
 				C85751B52657EAAD002C187D /* Assets.xcassets in Resources */,
 			);

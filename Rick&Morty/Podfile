@@ -1,7 +1,11 @@
 # platform :ios, '8.0'
+
 use_frameworks!
 
+
 target 'Rick&Morty' do
+
+  pod 'Firebase/Auth'
   pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git'
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 

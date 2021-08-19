@@ -9,12 +9,14 @@ import SwiftUI
 
 struct SignUpView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var addCloseButton: Bool
     
     var width = UIScreen.main.bounds.width
     var height = UIScreen.main.bounds.height
-    
     var linerGradient = LinearGradient(gradient: Gradient(colors: [Color("accentBlue"), Color("accentGreen")]), startPoint: .leading, endPoint: .trailing)
+    
     
     var body: some View {
         VStack {
@@ -23,7 +25,7 @@ struct SignUpView: View {
                     VStack(alignment: .leading, spacing: height / 20) {
                         if addCloseButton {
                             Button {
-                                
+                                self.presentationMode.wrappedValue.dismiss()
                             } label: {
                                 Image(systemName: "xmark")
                                     .resizable()
