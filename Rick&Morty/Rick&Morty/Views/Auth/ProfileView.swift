@@ -22,8 +22,6 @@ struct ProfileView: View {
     
     var height = UIScreen.main.bounds.height
     
-    var linerGradient = LinearGradient(gradient: Gradient(colors: [Color("accentBlue"), Color("accentGreen")]), startPoint: .leading, endPoint: .trailing)
-    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 100) {

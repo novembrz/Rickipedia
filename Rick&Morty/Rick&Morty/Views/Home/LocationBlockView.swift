@@ -14,7 +14,7 @@ final class LocationBlockViewModel: ObservableObject {
     @Published var url: String?
     
     func getLocations() {
-        DataFetcherServices().fetchRandomLocations { [self] result in
+        DataFetcher().fetchRandomLocations { [self] result in
             DispatchQueue.main.async {
                 guard let locations = result else {return}
                 self.locations = locations

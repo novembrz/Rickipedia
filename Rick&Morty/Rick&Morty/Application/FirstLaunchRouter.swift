@@ -33,7 +33,7 @@ struct MotherView: View {
                     TabBarRouterView(viewRouter: Router())
                 }
                 .sheet(isPresented: $isShow) {
-                    LoginPageView(addCloseButton: true)
+                    AuthenticationView(addCloseButton: true)
                         .viewSettings()
                 }
             } else if router.currentPage == "homeView"{

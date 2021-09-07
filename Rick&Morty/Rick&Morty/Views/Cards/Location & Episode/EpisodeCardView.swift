@@ -14,7 +14,7 @@ final class EpisodeCardViewModel: ObservableObject {
     @Published var url: String?
     
     func getEpisodes(url: String, count: Int) {
-        DataFetcherServices().fetchEpisodes(url: url, count: count) { result in
+        DataFetcher().fetchEpisodes(url: url, count: count) { result in
             DispatchQueue.main.async {
                 guard let episodes = result else {return}
                 self.episodes = episodes

@@ -7,15 +7,20 @@
 
 import SwiftUI
 
+//MARK: SignInView
+
 struct SignInView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var authService: AuthenticationService
+    
+    @State var source = ""
+    @State var password = ""
     
     var addCloseButton: Bool
     
     var width = UIScreen.main.bounds.width
     var height = UIScreen.main.bounds.height
-    var linerGradient = LinearGradient(gradient: Gradient(colors: [Color("accentBlue"), Color("accentGreen")]), startPoint: .leading, endPoint: .trailing)
     
     var body: some View {
         VStack {
@@ -39,8 +44,13 @@ struct SignInView: View {
                     }
                     
                     VStack(alignment: .trailing, spacing: 37) {
-                        CustomTextField(placeholder: "Phone / E-mail", imageName: "rocket")
-                        CustomTextField(placeholder: "Password", imageName: "galaxy")
+                        AuthTextFieldStyle(text: $password, placeholder: "Phone / E-mail", imageName: "rocket") {
+                            TextField("", text: $source)
+                        }
+                        
+                        AuthTextFieldStyle(text: $password, placeholder: "Password", imageName: "galaxy") {
+                            TextField("", text: $password)
+                        }
                         
                         Button {} label: {
                             Text("Forgot password?")
@@ -50,7 +60,16 @@ struct SignInView: View {
                     }
                 }
                 
-                Button { } label: {
+                Button {
+//                    authService.emailSignIn(email: source, password: password) { result in
+//                        switch result {
+//                        case .success(_):
+//                            print("")
+//                        case .failure(_):
+//                            print("")
+//                        }
+//                    }
+                } label: {
                     ZStack {
                         Text("Sign in".uppercased())
                             .font(.system(size: 16, weight: .bold))
@@ -58,18 +77,32 @@ struct SignInView: View {
                             .padding(.horizontal, 12)
                             .foregroundColor(Color("GrayBgColor"))
                             .frame(height: 50)
-                            .background(linerGradient)
+                            .background(LinearGradient.rmGradient())
                             .cornerRadius(8)
                     }
                 }
                 
-                HStack(spacing: 34) {
-                    Circle()
-                        .frame(width: 40, height: 40)
-                    Circle()
-                        .frame(width: 40, height: 40)
-                    Circle()
-                        .frame(width: 40, height: 40)
+                HStack(spacing: 40) {
+                    Button {} label: {
+                        Image("facebook")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                    }
+                    
+                    Button {} label: {
+                        Image("google")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                    }
+                    
+                    Button {} label: {
+                        Image("apple")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
+                    }
                 }
             }
             
@@ -79,9 +112,11 @@ struct SignInView: View {
     }
 }
 
+//MARK: SignInView_Previews
+
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(addCloseButton: false)
+        SignInView(authService: .init(), addCloseButton: false)
             .viewSettings()
     }
 }

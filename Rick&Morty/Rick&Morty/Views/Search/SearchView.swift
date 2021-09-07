@@ -15,7 +15,6 @@ final class SearchViewModel: ObservableObject {
     @Published var selctedCategory: String = ""
     
     var filterCategories = ["person", "marsian", "planet", "starship"]
-    var linerGradient = LinearGradient(gradient: Gradient(colors: [Color("accentBlue"), Color("accentGreen")]), startPoint: .top, endPoint: .bottom)
     
     func randomString() -> String {
         let words = ["Evil Beth Clone", "Venzenulon 7", "Gromflom Prime", "Rick D. Sanchez III", "Birdperson", "Cowboy Morty", "Fascist Mr. President", "Unity", "Earth (C-137)"]

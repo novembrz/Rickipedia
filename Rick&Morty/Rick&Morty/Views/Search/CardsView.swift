@@ -19,7 +19,7 @@ final class CardsViewModel: ObservableObject {
     
     func getPersons() {
         isLoading = true
-        DataFetcherServices().fetchAllPersons { [self] result in
+        DataFetcher().fetchAllPersons { [self] result in
             DispatchQueue.main.async {
                 isLoading = false
                 guard let personArray = result else {return}

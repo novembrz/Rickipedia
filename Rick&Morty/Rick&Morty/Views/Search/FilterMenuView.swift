@@ -11,8 +11,6 @@ import SwiftUI
 final class FilterMenuViewModel: ObservableObject {
     @Published var selctedCategory: String = ""
     
-    var linerGradient = LinearGradient(gradient: Gradient(colors: [Color("accentBlue"), Color("accentGreen")]), startPoint: .top, endPoint: .bottom)
-    
     func filterPersons() {
         switch selctedCategory {
         
@@ -38,7 +36,7 @@ struct FilterMenuView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 73)
-                .background(viewModel.selctedCategory == item ? AnyView(viewModel.linerGradient.opacity(0.8)) : AnyView(Color.gray.opacity(0.3)))
+                .background(viewModel.selctedCategory == item ? AnyView(LinearGradient.rmGradient().opacity(0.8)) : AnyView(Color.gray.opacity(0.3)))
                 .cornerRadius(8)
             }
         }

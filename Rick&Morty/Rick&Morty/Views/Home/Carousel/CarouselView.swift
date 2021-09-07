@@ -16,7 +16,7 @@ final class CarouselBlockViewModel: ObservableObject {
     
     func getPersons() {
         isLoading = true
-        DataFetcherServices().fetchRandomPersons { [self] result in
+        DataFetcher().fetchRandomPersons { [self] result in
             DispatchQueue.main.async {
                 isLoading = false
                 guard let personArray = result else {return}

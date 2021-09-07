@@ -19,7 +19,7 @@ final class LocationEpisodeCardViewModel: ObservableObject {
     func getLocation(url: String?, type: CardType) {
         switch type {
         case .location:
-            DataFetcherServices().fetchLocation(url: url ?? "") { result in
+            DataFetcher().fetchLocation(url: url ?? "") { result in
                 DispatchQueue.main.async {
                     guard let location = result?[0] else {return}
                     self.resurse = location
@@ -27,7 +27,7 @@ final class LocationEpisodeCardViewModel: ObservableObject {
                 }
             }
         case .episode:
-            DataFetcherServices().fetchEpisodes(url: url ?? "", count: 1) { result in
+            DataFetcher().fetchEpisodes(url: url ?? "", count: 1) { result in
                 DispatchQueue.main.async {
                     guard let episode = result?[0] else {return}
                     self.resurse = Location(id: episode.id, name: episode.name, type: episode.date, dimension: episode.episode, url: episode.url, residents: episode.characters)

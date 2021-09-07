@@ -20,7 +20,6 @@ struct CarouselContentView: View {
     
     var person: Person
     var scrolled: Int
-    var linerGradient = LinearGradient(gradient: Gradient(colors: [Color("accentBlue"), Color("accentGreen")]), startPoint: .leading, endPoint: .trailing)
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {

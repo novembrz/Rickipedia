@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginPageView: View {
+struct AuthenticationView: View {
     
     @State var isSignIn = true
     @State var animate = false
@@ -20,7 +20,7 @@ struct LoginPageView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             if isSignIn {
-                SignInView(addCloseButton: addCloseButton)
+                SignInView(authService: .init(), addCloseButton: addCloseButton)
                     .transition(.move(edge: isSignIn ? .trailing : .leading))
                     .animation(.easeInOut)
                 
@@ -59,7 +59,7 @@ struct LoginPageView: View {
 
 struct LoginPageView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginPageView(addCloseButton: false)
+        AuthenticationView(addCloseButton: false)
             .viewSettings()
     }
 }

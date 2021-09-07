@@ -18,7 +18,7 @@ final class PersonCardViewModel: ObservableObject {
     let maxHeigth = UIScreen.main.bounds.height / 1.32
     
     func getPerson(id: Int?) {
-        DataFetcherServices().fetchPerson(id: id ?? 1) { result in
+        DataFetcher().fetchPerson(id: id ?? 1) { result in
             DispatchQueue.main.async {
                 guard let person = result?[0] else {return}
                 self.person = person
@@ -30,7 +30,7 @@ final class PersonCardViewModel: ObservableObject {
     
     func getLocation() {
         if let locationURL = person?.location?.url {
-            DataFetcherServices().fetchLocation(url: locationURL) { result in
+            DataFetcher().fetchLocation(url: locationURL) { result in
                 DispatchQueue.main.async {
                     guard let location = result?[0] else {return}
                     self.location = location
@@ -41,7 +41,7 @@ final class PersonCardViewModel: ObservableObject {
     
     func getOrigin() {
         if let originURL = person?.origin?.url {
-            DataFetcherServices().fetchLocation(url: originURL) { result in
+            DataFetcher().fetchLocation(url: originURL) { result in
                 DispatchQueue.main.async {
                     guard let origin = result?[0] else {return}
                     self.origin = origin

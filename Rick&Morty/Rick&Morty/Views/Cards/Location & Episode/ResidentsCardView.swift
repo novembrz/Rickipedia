@@ -17,7 +17,7 @@ final class ResidentsCardViewModel: ObservableObject {
     func getResidents(residents: [String]) {
         isLoading = true
         StringsConvert().makeOneURL(urls: residents, type: .char) { url, count in
-            DataFetcherServices().fetchResidents(url: url, count: count) { result in
+            DataFetcher().fetchResidents(url: url, count: count) { result in
                 DispatchQueue.main.async {
                     //self.isLoading = false
                     guard let residents = result else {return}

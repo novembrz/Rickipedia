@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataFetcherServices {
+struct DataFetcher {
     
     private var urlString = "https://rickandmortyapi.com/api/character"
     private var urlStringLocation = "https://rickandmortyapi.com/api/location"
