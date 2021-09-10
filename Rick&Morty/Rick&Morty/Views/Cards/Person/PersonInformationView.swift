@@ -10,7 +10,7 @@ import SwiftUI
 //MARK: View
 struct PersonInformationView: View {
     
-    var person: Person
+    var person: PersonModel
     var columns: [GridItem] = Array(repeating: .init(.flexible(maximum: UIScreen.main.bounds.width / 2), spacing: 10, alignment: .topLeading), count: 2)
     
     var body: some View {

@@ -9,12 +9,12 @@ import SwiftUI
 
 final class LocationBlockViewModel: ObservableObject {
     
-    @Published var locations: [Location] = []
-    @Published var location: Location?
+    @Published var locations: [LocationModel] = []
     @Published var url: String?
     
     func getLocations() {
-        DataFetcher().fetchRandomLocations { [self] result in
+        
+        DataFetcherServices.fetchRandomLocations { [self] result in
             DispatchQueue.main.async {
                 guard let locations = result else {return}
                 self.locations = locations
@@ -37,7 +37,6 @@ struct LocationBlockView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 18) {
                     ForEach(viewModel.locations, id: \.self) { location in
-                        //if location.name != "unknow" {
                             Button {
                                 viewModel.url = location.url
                                 isPresented.toggle()

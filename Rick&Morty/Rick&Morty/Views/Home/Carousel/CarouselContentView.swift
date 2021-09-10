@@ -18,12 +18,12 @@ final class CarouselContentViewModel: ObservableObject {
 struct CarouselContentView: View {
     @ObservedObject var viewModel: CarouselContentViewModel
     
-    var person: Person
+    var person: PersonCard
     var scrolled: Int
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
-            KFImage(URL(string: person.image ?? AppData.defaultImageUrl))
+            KFImage(URL(string: person.person.image ?? AppData.defaultImageUrl))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     //динамический фрейм
@@ -33,7 +33,7 @@ struct CarouselContentView: View {
             
             VStack(alignment: .leading, spacing: 18) {
                 HStack() {
-                    Text(person.name)
+                    Text(person.person.name)
                         .font(.title)
                         .fontWeight(.heavy)
                     

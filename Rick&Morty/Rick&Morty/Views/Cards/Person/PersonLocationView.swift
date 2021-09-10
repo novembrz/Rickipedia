@@ -9,8 +9,8 @@ import SwiftUI
 
 //MARK: View
 struct PersonLocationView: View {
-    var origin: Location?
-    var location: Location?
+    var origin: LocationModel?
+    var location: LocationModel?
     
     let columns: [GridItem] = Array(repeating: .init(.flexible(maximum: UIScreen.main.bounds.width / 2), spacing: 20, alignment: .topLeading), count: 2)
     

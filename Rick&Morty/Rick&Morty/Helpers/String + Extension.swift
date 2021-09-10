@@ -8,7 +8,6 @@
 import Foundation
 
 class StringsConvert {
-    
     enum Urls: String {
         case episode = "https://rickandmortyapi.com/api/episode/"
         case char = "https://rickandmortyapi.com/api/character/"

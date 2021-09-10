@@ -10,18 +10,17 @@ import Kingfisher
 
 //MARK: - ViewModel
 final class PersonCardViewModel: ObservableObject {
-    @Published var person: Person?
+    @Published var person: PersonModel?
     @Published var show = false
-    @Published var location: Location?
-    @Published var origin: Location?
+    @Published var location: LocationModel?
+    @Published var origin: LocationModel?
     //var id: Int?
     let maxHeigth = UIScreen.main.bounds.height / 1.32
     
     func getPerson(id: Int?) {
-        DataFetcher().fetchPerson(id: id ?? 1) { result in
+        DataFetcherServices.fetchPerson(id: id ?? 1) { result in
             DispatchQueue.main.async {
-                guard let person = result?[0] else {return}
-                self.person = person
+                self.person = result
                 self.getLocation()
                 self.getOrigin()
             }
@@ -30,9 +29,9 @@ final class PersonCardViewModel: ObservableObject {
     
     func getLocation() {
         if let locationURL = person?.location?.url {
-            DataFetcher().fetchLocation(url: locationURL) { result in
+            DataFetcherServices.fetchLocation(urlString: locationURL) { result in
                 DispatchQueue.main.async {
-                    guard let location = result?[0] else {return}
+                    guard let location = result else { return }
                     self.location = location
                 }
             }
@@ -41,9 +40,9 @@ final class PersonCardViewModel: ObservableObject {
     
     func getOrigin() {
         if let originURL = person?.origin?.url {
-            DataFetcher().fetchLocation(url: originURL) { result in
+            DataFetcherServices.fetchLocation(urlString: originURL) { result in
                 DispatchQueue.main.async {
-                    guard let origin = result?[0] else {return}
+                    guard let origin = result else {return}
                     self.origin = origin
                 }
             }
@@ -79,7 +78,7 @@ struct PersonCardView: View {
                 }
                 .frame(height: viewModel.maxHeigth)
                 
-                PersonView(person: viewModel.person ?? AppData.person,
+                PersonView(person: viewModel.person ?? AppData.personModel,
                            location: viewModel.location,
                            origin: viewModel.origin)
                     .offset(y: -50)

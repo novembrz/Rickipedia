@@ -11,7 +11,7 @@ import Kingfisher
 //MARK: ViewModel
 
 final class LocationEpisodeCardViewModel: ObservableObject {
-    @Published var resurse: Location?
+    @Published var resurse: LocationModel?
     
     @Published var residents: [String]?
     @Published var isLoading = false
@@ -19,18 +19,18 @@ final class LocationEpisodeCardViewModel: ObservableObject {
     func getLocation(url: String?, type: CardType) {
         switch type {
         case .location:
-            DataFetcher().fetchLocation(url: url ?? "") { result in
+            DataFetcherServices.fetchLocation(urlString: url ?? "") { result in
                 DispatchQueue.main.async {
-                    guard let location = result?[0] else {return}
+                    guard let location = result else {return}
                     self.resurse = location
                     self.residents = location.residents
                 }
             }
         case .episode:
-            DataFetcher().fetchEpisodes(url: url ?? "", count: 1) { result in
+            DataFetcherServices.fetchEpisode(urlString: url ?? "") { result in
                 DispatchQueue.main.async {
-                    guard let episode = result?[0] else {return}
-                    self.resurse = Location(id: episode.id, name: episode.name, type: episode.date, dimension: episode.episode, url: episode.url, residents: episode.characters)
+                    guard let episode = result else {return}
+                    self.resurse = LocationModel(name: episode.name, url: episode.url, id: episode.id, type: episode.airDate, dimension: episode.episode, residents: episode.characters)
                     self.residents = episode.characters
                 }
             }
@@ -57,7 +57,7 @@ struct LocationEpisodeCardView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let resurse = viewModel.resurse {
+            if let resurse = viewModel.resurse, let dimension = resurse.dimension, let type = resurse.type {
                 ZStack(alignment: .top) {
                     
                     Image(imageExists(imageName: resurse.name) ? resurse.name : "DarkLocation")
@@ -78,7 +78,7 @@ struct LocationEpisodeCardView: View {
                                 Text(resurse.name)
                                     .font(.system(size: 35, weight: .bold))
                                 
-                                Text("\(resurse.dimension) / \(resurse.type)")
+                                Text("\(dimension) / \(type)")
                                     .font(.system(size: 18, weight: .medium))
                             }
                             .padding()

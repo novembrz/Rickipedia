@@ -10,19 +10,30 @@ import Kingfisher
 
 //MARK: - ViewModel
 final class CardsViewModel: ObservableObject {
-    @Published var persons: [Person] = []
+    @Published var persons: [PersonModel] = []
     @Published var showCard = false
     @Published var isLoading = false
     @Published var id: Int?
     
     var columns: [GridItem] = Array(repeating: .init(.flexible(maximum: 140), spacing: 28, alignment: .top), count: 3)
     
-    func getPersons() {
+//    func getPersons() {
+//        isLoading = true
+//        DataFetcher().fetchAllPersons { [self] result in
+//            DispatchQueue.main.async {
+//                isLoading = false
+//                guard let personArray = result else {return}
+//                persons = personArray
+//            }
+//        }
+//    }
+    
+    func getAllPersons() {
         isLoading = true
-        DataFetcher().fetchAllPersons { [self] result in
+        DataFetcherServices.fetchAllPersons() { [self] result in
             DispatchQueue.main.async {
                 isLoading = false
-                guard let personArray = result else {return}
+                guard let personArray = result?.results else {return}
                 persons = personArray
             }
         }
@@ -63,7 +74,7 @@ struct CardsView: View {
         }
         .animation(.easeIn)
         .transition(.move(edge: .top))
-        .onAppear() { viewModel.getPersons() }
+        .onAppear() { viewModel.getAllPersons() }
         if viewModel.isLoading { LoadingView() }
     }
 }

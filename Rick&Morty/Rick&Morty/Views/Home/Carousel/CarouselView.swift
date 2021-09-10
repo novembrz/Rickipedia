@@ -10,17 +10,24 @@ import SwiftUI
 //MARK: - ViewModel
 
 final class CarouselBlockViewModel: ObservableObject {
-    @Published var persons: [Person] = []
+    @Published var persons: [PersonCard] = []
     @Published var scrolled = 0
     @Published var isLoading = false
     
     func getPersons() {
         isLoading = true
-        DataFetcher().fetchRandomPersons { [self] result in
+        
+        DataFetcherServices.fetchRandomPersons { [self] result in
             DispatchQueue.main.async {
                 isLoading = false
                 guard let personArray = result else {return}
-                persons = personArray
+                
+                var count = 0
+                for person in personArray {
+                    let personCard = PersonCard(id: person.id, index: count, person: person)
+                    persons.append(personCard)
+                    count += 1
+                }
             }
         }
     }

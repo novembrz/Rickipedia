@@ -9,9 +9,9 @@ import SwiftUI
 
 //MARK: PersonView
 struct PersonView: View {
-    var person: Person
-    var location: Location?
-    var origin: Location?
+    var person: PersonModel
+    var location: LocationModel?
+    var origin: LocationModel?
     
     @State var showView = false
     @State var urls = ""
@@ -24,6 +24,7 @@ struct PersonView: View {
                 .font(.system(size: 35, weight: .bold))
                 .frame(width: 230, alignment: .topLeading)
                 .offset(x: -60)
+                .padding(.horizontal, -123)
             
             VStack(spacing: 45) {
                 PersonInformationView(person: person)
@@ -54,7 +55,7 @@ struct PersonView: View {
             .background(Color("GrayElementColor"))
             .cornerRadius(20)
             .sheet(isPresented: $showView) {
-                EpisodeCardView(viewModel: EpisodeCardViewModel(), urls: $urls, count: $count)
+                EpisodeCardView(viewModel: EpisodeCardViewModel(), urls: $urls, count: person.episode.count)
             }
         }
         .offset(y: -80)
