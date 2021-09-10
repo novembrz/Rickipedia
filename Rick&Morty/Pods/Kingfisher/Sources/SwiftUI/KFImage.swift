@@ -26,8 +26,9 @@
 
 #if canImport(SwiftUI) && canImport(Combine)
 import SwiftUI
+import Combine
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public struct KFImage: KFImageProtocol {
     public var context: Context<Image>
     public init(context: Context<Image>) {
@@ -35,35 +36,16 @@ public struct KFImage: KFImageProtocol {
     }
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension Image: KFImageHoldingView {
-    public static func created(from image: KFCrossPlatformImage) -> Image {
-        if #available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *) {
-            return Image(crossPlatformImage: image)
-        } else {
-            #if canImport(UIKit)
-            // The CG image is used to solve #1395
-            // It should be not necessary if SwiftUI.Image can handle resizing correctly when created
-            // by `Image.init(uiImage:)`. (The orientation information should be already contained in
-            // a `UIImage`)
-            // https://github.com/onevcat/Kingfisher/issues/1395
-            //
-            // This issue happens on iOS 13 and was fixed by Apple from iOS 14.
-            if let cgImage = image.cgImage {
-                return Image(decorative: cgImage, scale: image.scale, orientation: image.imageOrientation.toSwiftUI())
-            } else {
-                return Image(crossPlatformImage: image)
-            }
-            #else
-            return Image(crossPlatformImage: image)
-            #endif
-
-        }
+    public typealias RenderingView = Image
+    public static func created(from image: KFCrossPlatformImage?, context: KFImage.Context<Self>) -> Image {
+        Image(crossPlatformImage: image)
     }
 }
 
 // MARK: - Image compatibility.
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension KFImage {
 
     public func resizable(
@@ -84,51 +66,35 @@ extension KFImage {
     public func antialiased(_ isAntialiased: Bool) -> KFImage {
         configure { $0.antialiased(isAntialiased) }
     }
-}
-
-// MARK: - Deprecated
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-extension KFImage {
-    /// Creates a Kingfisher compatible image view to load image from the given `Source`.
-    /// - Parameter source: The image `Source` defining where to load the target image.
-    /// - Parameter options: The options should be applied when loading the image.
-    ///                      Some UIKit related options (such as `ImageTransition.flip`) are not supported.
-    /// - Parameter isLoaded: Whether the image is loaded or not. This provides a way to inspect the internal loading
-    ///                       state. `true` if the image is loaded successfully. Otherwise, `false`. Do not set the
-    ///                       wrapped value from outside.
-    /// - Deprecated: Some options are not available in SwiftUI yet. Use `KFImage(source:isLoaded:)` to create a
-    ///               `KFImage` and configure the options through modifier instead. See methods of `KFOptionSetter`
-    ///               for more.
-    @available(*, deprecated, message: "Some options are not available in SwiftUI yet. Use `KFImage(source:isLoaded:)` to create a `KFImage` and configure the options through modifier instead.")
-    public init(source: Source?, options: KingfisherOptionsInfo? = nil, isLoaded: Binding<Bool> = .constant(false)) {
-        let binder = KFImage.ImageBinder(source: source, options: options, isLoaded: isLoaded)
-        self.init(binder: binder)
-    }
-
-    /// Creates a Kingfisher compatible image view to load image from the given `URL`.
-    /// - Parameter url: The image URL from where to load the target image.
-    /// - Parameter options: The options should be applied when loading the image.
-    ///                      Some UIKit related options (such as `ImageTransition.flip`) are not supported.
-    /// - Parameter isLoaded: Whether the image is loaded or not. This provides a way to inspect the internal loading
-    ///                       state. `true` if the image is loaded successfully. Otherwise, `false`. Do not set the
-    ///                       wrapped value from outside.
-    /// - Deprecated: Some options are not available in SwiftUI yet. Use `KFImage(_:isLoaded:)` to create a
-    ///               `KFImage` and configure the options through modifier instead. See methods of `KFOptionSetter`
-    ///               for more.
-    @available(*, deprecated, message: "Some options are not available in SwiftUI yet. Use `KFImage(_:isLoaded:)` to create a `KFImage` and configure the options through modifier instead.")
-    init(_ url: URL?, options: KingfisherOptionsInfo? = nil, isLoaded: Binding<Bool> = .constant(false)) {
-        self.init(source: url?.convertToSource(), options: options, isLoaded: isLoaded)
+    
+    /// Starts the loading process of `self` immediately.
+    ///
+    /// By default, a `KFImage` will not load its source until the `onAppear` is called. This is a lazily loading
+    /// behavior and provides better performance. However, when you refresh the view, the lazy loading also causes a
+    /// flickering since the loading does not happen immediately. Call this method if you want to start the load at once
+    /// could help avoiding the flickering, with some performance trade-off.
+    ///
+    /// - Deprecated: This is not necessary anymore since `@StateObject` is used for holding the image data.
+    /// It does nothing now and please just remove it.
+    ///
+    /// - Returns: The `Self` value with changes applied.
+    @available(*, deprecated, message: "This is not necessary anymore since `@StateObject` is used. It does nothing now and please just remove it.")
+    public func loadImmediately(_ start: Bool = true) -> KFImage {
+        return self
     }
 }
 
 #if DEBUG
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct KFImage_Previews : PreviewProvider {
     static var previews: some View {
         Group {
             KFImage.url(URL(string: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/logo.png")!)
                 .onSuccess { r in
                     print(r)
+                }
+                .placeholder { p in
+                    ProgressView(p)
                 }
                 .resizable()
                 .aspectRatio(contentMode: .fit)

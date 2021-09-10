@@ -2,7 +2,7 @@
 //  ImageContext.swift
 //  Kingfisher
 //
-//  Created by JP20028 on 2021/05/08.
+//  Created by onevcat on 2021/05/08.
 //
 //  Copyright (c) 2021 Wei Wang <onevcat@gmail.com>
 //
@@ -26,23 +26,70 @@
 
 #if canImport(SwiftUI) && canImport(Combine)
 import SwiftUI
+import Combine
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension KFImage {
-    public struct Context<HoldingView: KFImageHoldingView> {
-        var binder: ImageBinder
-        var configurations: [(HoldingView) -> HoldingView] = []
-        var cancelOnDisappear: Bool = false
-        var placeholder: AnyView? = nil
+    public class Context<HoldingView: KFImageHoldingView> {
+        let source: Source?
+        var options = KingfisherParsedOptionsInfo(
+            KingfisherManager.shared.defaultOptions + [.loadDiskFileSynchronously]
+        )
 
-        init(binder: ImageBinder) {
-            self.binder = binder
+        var configurations: [(HoldingView) -> HoldingView] = []
+        var renderConfigurations: [(HoldingView.RenderingView) -> Void] = []
+        
+        var cancelOnDisappear: Bool = false
+        var placeholder: ((Progress) -> AnyView)? = nil
+
+        let onFailureDelegate = Delegate<KingfisherError, Void>()
+        let onSuccessDelegate = Delegate<RetrieveImageResult, Void>()
+        let onProgressDelegate = Delegate<(Int64, Int64), Void>()
+        
+        init(source: Source?) {
+            self.source = source
+        }
+        
+        func shouldApplyFade(cacheType: CacheType) -> Bool {
+            options.forceTransition || cacheType == .none
+        }
+
+        func fadeTransitionDuration(cacheType: CacheType) -> TimeInterval? {
+            shouldApplyFade(cacheType: cacheType)
+            ? options.transition.fadeDuration
+                : nil
         }
     }
 }
 
+extension ImageTransition {
+    // Only for fade effect in SwiftUI.
+    fileprivate var fadeDuration: TimeInterval? {
+        switch self {
+        case .fade(let duration):
+            return duration
+        default:
+            return nil
+        }
+    }
+}
+
+
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+extension KFImage.Context: Hashable {
+    public static func == (lhs: KFImage.Context<HoldingView>, rhs: KFImage.Context<HoldingView>) -> Bool {
+        lhs.source == rhs.source &&
+        lhs.options.processor.identifier == rhs.options.processor.identifier
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(source)
+        hasher.combine(options.processor.identifier)
+    }
+}
+
 #if canImport(UIKit) && !os(watchOS)
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension KFAnimatedImage {
     public typealias Context = KFImage.Context
     typealias ImageBinder = KFImage.ImageBinder

@@ -26,88 +26,64 @@
 
 #if canImport(SwiftUI) && canImport(Combine)
 import SwiftUI
+import Combine
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public protocol KFImageProtocol: View, KFOptionSetter {
     associatedtype HoldingView: KFImageHoldingView
     var context: KFImage.Context<HoldingView> { get set }
     init(context: KFImage.Context<HoldingView>)
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension KFImageProtocol {
     public var body: some View {
-        KFImageRenderer<HoldingView>(context)
-            .id(context.binder)
-    }
-    
-    /// Starts the loading process of `self` immediately.
-    ///
-    /// By default, a `KFImage` will not load its source until the `onAppear` is called. This is a lazily loading
-    /// behavior and provides better performance. However, when you refresh the view, the lazy loading also causes a
-    /// flickering since the loading does not happen immediately. Call this method if you want to start the load at once
-    /// could help avoiding the flickering, with some performance trade-off.
-    ///
-    /// - Returns: The `Self` value with changes applied.
-    public func loadImmediately(_ start: Bool = true) -> Self {
-        if start {
-            context.binder.start()
-        }
-        return self
+        KFImageRenderer<HoldingView>(context: context)
+            .id(context)
     }
     
     /// Creates a Kingfisher compatible image view to load image from the given `Source`.
     /// - Parameters:
     ///   - source: The image `Source` defining where to load the target image.
-    ///   - isLoaded: Whether the image is loaded or not. This provides a way to inspect the internal loading
-    ///               state. `true` if the image is loaded successfully. Otherwise, `false`. Do not set the
-    ///               wrapped value from outside.
-    public init(source: Source?, isLoaded: Binding<Bool> = .constant(false)) {
-        let binder = KFImage.ImageBinder(source: source, isLoaded: isLoaded)
-        self.init(binder: binder)
+    public init(source: Source?) {
+        let context = KFImage.Context<HoldingView>(source: source)
+        self.init(context: context)
     }
 
     /// Creates a Kingfisher compatible image view to load image from the given `URL`.
     /// - Parameters:
     ///   - source: The image `Source` defining where to load the target image.
-    ///   - isLoaded: Whether the image is loaded or not. This provides a way to inspect the internal loading
-    ///               state. `true` if the image is loaded successfully. Otherwise, `false`. Do not set the
-    ///               wrapped value from outside.
-    public init(_ url: URL?, isLoaded: Binding<Bool> = .constant(false)) {
-        self.init(source: url?.convertToSource(), isLoaded: isLoaded)
-    }
-
-    init(binder: KFImage.ImageBinder) {
-        self.init(context: KFImage.Context<HoldingView>(binder: binder))
+    public init(_ url: URL?) {
+        self.init(source: url?.convertToSource())
     }
     
     /// Configures current image with a `block`. This block will be lazily applied when creating the final `Image`.
     /// - Parameter block: The block applies to loaded image.
     /// - Returns: A `KFImage` view that configures internal `Image` with `block`.
     public func configure(_ block: @escaping (HoldingView) -> HoldingView) -> Self {
-        var result = self
-        result.context.configurations.append(block)
-        return result
+        context.configurations.append(block)
+        return self
     }
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 public protocol KFImageHoldingView: View {
-    static func created(from image: KFCrossPlatformImage) -> Self
+    associatedtype RenderingView
+    static func created(from image: KFCrossPlatformImage?, context: KFImage.Context<Self>) -> Self
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension KFImageProtocol {
     public var options: KingfisherParsedOptionsInfo {
-        get { context.binder.options }
-        nonmutating set { context.binder.options = newValue }
+        get { context.options }
+        nonmutating set { context.options = newValue }
     }
 
-    public var onFailureDelegate: Delegate<KingfisherError, Void> { context.binder.onFailureDelegate }
-    public var onSuccessDelegate: Delegate<RetrieveImageResult, Void> { context.binder.onSuccessDelegate }
-    public var onProgressDelegate: Delegate<(Int64, Int64), Void> { context.binder.onProgressDelegate }
+    public var onFailureDelegate: Delegate<KingfisherError, Void> { context.onFailureDelegate }
+    public var onSuccessDelegate: Delegate<RetrieveImageResult, Void> { context.onSuccessDelegate }
+    public var onProgressDelegate: Delegate<(Int64, Int64), Void> { context.onProgressDelegate }
 
-    public var delegateObserver: AnyObject { context.binder }
+    public var delegateObserver: AnyObject { context }
 }
 
 
