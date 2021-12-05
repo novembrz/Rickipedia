@@ -16,7 +16,7 @@ class AuthenticationService: ObservableObject {
     @Published var isError = false
     @Published var goToVerify = false
     
-    static let shared = AuthenticationService()
+    //static let shared = AuthenticationService()
     private var auth = Auth.auth()
     
     //MARK: Email

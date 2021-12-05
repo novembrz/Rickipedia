@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'Rick&Morty' do
 
-  pod 'Firebase/Auth'
+pod 'Firebase/Auth'
 
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Google'
@@ -13,6 +13,6 @@ pod 'FirebaseUI/Facebook'
 pod 'FirebaseUI/OAuth' # Used for Sign in with Apple, Twitter, etc
 pod 'FirebaseUI/Phone'
 
-  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git'
+pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git'
 
 end

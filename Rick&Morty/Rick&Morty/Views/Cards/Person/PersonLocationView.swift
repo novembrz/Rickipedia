@@ -61,9 +61,11 @@ struct PersonLocationViewItem: View {
                     .frame(height: 81)
                     .frame(maxWidth: .infinity)
                     .cornerRadius(10)
+                
                 VStack(alignment: .leading, spacing: 2) {
                     Text(type)
                         .font(.system(size: 20, weight: .medium))
+                    
                     Text(locationName)
                         .font(.system(size: 16, weight: .regular))
                         .lineLimit(1)

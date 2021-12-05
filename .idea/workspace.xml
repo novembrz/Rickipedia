@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="58603a32-bbc2-430a-a5c0-94769d8bcd64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Application/FirstLaunchRouter.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Helpers/AppData.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Helpers/Auth/AuthError.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Helpers/Auth/Validators.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Helpers/LinerGradient + Extension.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Models/EpisodeModel.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Models/LocationModel.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Models/PersonModel.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Rick&amp;Morty.entitlements" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Services/AuthenticationService.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Services/Networking/DataFetcherServices.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Services/Networking/NetworkManager.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 120-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 40-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 80-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/П 87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Base/greenPortal.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Base/greenPortal.imageset/greenPortal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Base/photoEllipse.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Base/photoEllipse.imageset/Ellipse 15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Colors/Error.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Colors/Violet.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/A Rickle in Time.imageset/A Rickle in Time.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/A Rickle in Time.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Anatomy Park.imageset/Anatomy Park.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Anatomy Park.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Auto Erotic Assimilation.imageset/Auto Erotic Assimilation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Auto Erotic Assimilation.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Big Trouble in Little Sanchez.imageset/Big Trouble in Little Sanchez.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Childrick of Mort.imageset/Childrick of Mort.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Childrick of Mort.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Claw and Hoarder: Special Ricktim's Morty.imageset/Claw and Hoarder_ Special Ricktim's Morty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Claw and Hoarder: Special Ricktim's Morty.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Close Rick-counters of the Rick Kind.imageset/Close Rick-counters of the Rick Kind.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Close Rick-counters of the Rick Kind.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Edge of Tomorty: Rick, Die, Rickpeat.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Edge of Tomorty: Rick, Die, Rickpeat.imageset/Edge of Tomorty_ Rick, Die, Rickpeat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Get Schwifty.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Get Schwifty.imageset/Get Schwifty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Interdimensional Cable 2: Tempting Fate.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Interdimensional Cable 2: Tempting Fate.imageset/Interdimensional Cable 2_ Tempting Fate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Lawnmower Dog.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Lawnmower Dog.imageset/Lawnmower Dog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Look Who's Purging Now.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Look Who's Purging Now.imageset/Look Who's Purging Now.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/M. Night Shaym-Aliens!.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/M. Night Shaym-Aliens!.imageset/M. Night Shaym-Aliens!.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Meeseeks and Destroy.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Meeseeks and Destroy.imageset/Meeseeks and Destroy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Morty's Mind Blowers.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Morty's Mind Blowers.imageset/Morty's Mind Blowers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Mortynight Run.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Mortynight Run.imageset/Mortynight Run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Never Ricking Morty.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Never Ricking Morty.imageset/Never Ricking Morty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/One Crew Over the Crewcoo's Morty.imageset/One Crew Over the Crewcoo's Morty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Pickle Rick.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Pickle Rick.imageset/Pickle Rick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Pilot.imageset/Pilot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Promortyus.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Promortyus.imageset/Promortyus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Raising Gazorpazorp.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Raising Gazorpazorp.imageset/Raising Gazorpazorp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rattlestar Ricklactica.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rattlestar Ricklactica.imageset/Rattlestar Ricklactica.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rest and Ricklaxation.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rest and Ricklaxation.imageset/Rest and Ricklaxation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rick Potion #9.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rick Potion #9.imageset/Rick Potion #9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rickmancing the Stone.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rickmancing the Stone.imageset/Rickmancing the Stone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Ricksy Business.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Ricksy Business.imageset/Ricksy Busines.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rixty Minutes.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Rixty Minutes.imageset/Rixty Minutes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Something Ricked This Way Comes.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Something Ricked This Way Comes.imageset/Something Ricked This Way Comes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Star Mort: Rickturn of the Jerri.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Star Mort: Rickturn of the Jerri.imageset/Star Mort_ Rickturn of the Jerri.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The ABC's of Beth.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The ABC's of Beth.imageset/The ABC's of Beth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Old Man and the Seat.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Old Man and the Seat.imageset/The Old Man and the Seat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Rickchurian Mortydate.imageset/The Rickchurian Mortydate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Ricklantis Mixup.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Ricklantis Mixup.imageset/The Ricklantis Mixup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Ricks Must Be Crazy.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Ricks Must Be Crazy.imageset/The Ricks Must Be Crazy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Rickshank Rickdemption.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Rickshank Rickdemption.imageset/The Rickshank Rickdemption.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Vat of Acid Episode.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Vat of Acid Episode.imageset/The Vat of Acid Episode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Wedding Squanchers.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Wedding Squanchers.imageset/The Wedding Squanchers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Whirly Dirly Conspiracy.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Whirly Dirly Conspiracy.imageset/The Whirly Dirly Conspiracy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Total Rickall.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Total Rickall.imageset/Total Rickall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Vindicators 3: The Return of Worldender.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Vindicators 3: The Return of Worldender.imageset/Vindicators 3_ The Return of Worldender.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/comet.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/comet.imageset/icons8-комета-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/hand.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/hand.imageset/icons8-вулканский-жест-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/marsian.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/marsian.imageset/marsian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/person.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/person.imageset/icons8-покерфейс-100-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/planet.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/rick.imageset/icons8-ios-filled-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/starship.imageset/icons8-космический-истребитель-100-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Social Network/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Social Network/apple.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Social Network/apple.imageset/apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Social Network/facebook.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Social Network/facebook.imageset/facebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Social Network/google.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Social Network/google.imageset/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/GoogleService-Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Auth/ProfileView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Auth/Sign in &amp; up/AuthenticationView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Auth/Sign in &amp; up/SignInView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Auth/Sign in &amp; up/SignUpView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Location &amp; Episode/EpisodeCardView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Favourite/CustomSegmented.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Favourite/FavouriteView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Favourite/LocationsFavouriteView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Favourite/PersonsFavouriteView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Global &amp; Helpers/CustomTextField.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Global &amp; Helpers/Message.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Defiance Beth.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Defiance Beth.imageset/Defiance Beth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Dr. Occolopus.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Dr. Occolopus.imageset/Dr. Occolopus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/GrayBgColor.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Greasy Morty.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Greasy Morty.imageset/Greasy Morty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Journalist Rick.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Journalist Rick.imageset/Journalist Rick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Richy Rick.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Richy Rick.imageset/Richy Rick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Roy.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Roy.imageset/Roy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Teddy Rick.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/Teddy Rick.imageset/Teddy Rick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/WidgetBackground.colorset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/appIcon.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Assets.xcassets/appIcon.imageset/appIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/RickipediaWidget.intentdefinition" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/RickipediaWidget.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/WidgetProvider.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidget/WidgetView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rick&amp;Morty/RickipediaWidgetExtension.entitlements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Cache/DiskStorage.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Cache/DiskStorage.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Cache/ImageCache.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Cache/ImageCache.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Extensions/NSTextAttachment+Kingfisher.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Extensions/NSTextAttachment+Kingfisher.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/ImageSource/ImageDataProvider.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/ImageSource/ImageDataProvider.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/KF.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/KF.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/KFOptionsSetter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/KFOptionsSetter.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/Kingfisher.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/Kingfisher.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/KingfisherOptionsInfo.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/General/KingfisherOptionsInfo.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/GIFAnimatedImage.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/GIFAnimatedImage.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/Image.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/Image.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/ImageDrawing.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/ImageDrawing.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/ImageFormat.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/ImageFormat.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/ImageProcessor.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Image/ImageProcessor.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Networking/AuthenticationChallengeResponsable.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Networking/AuthenticationChallengeResponsable.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Networking/ImageDownloader.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Networking/ImageDownloader.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/ImageBinder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/ImageBinder.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/ImageContext.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/ImageContext.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFAnimatedImage.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFAnimatedImage.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFImage.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFImage.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFImageOptions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFImageOptions.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFImageProtocol.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFImageProtocol.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFImageRenderer.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/SwiftUI/KFImageRenderer.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Utility/CallbackQueue.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Utility/CallbackQueue.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Views/AnimatedImageView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Kingfisher/Sources/Views/AnimatedImageView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Local Podspecs/Kingfisher.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Local Podspecs/Kingfisher.podspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Local Podspecs/SwiftyJSON.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Pods.xcodeproj/xcuserdata/dasha.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Pods.xcodeproj/xcuserdata/dasha.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/SwiftyJSON/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/SwiftyJSON/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/SwiftyJSON/Source/SwiftyJSON/SwiftyJSON.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Kingfisher/Kingfisher-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Kingfisher/Kingfisher-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks-Debug-input-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks-Debug-input-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks-Debug-output-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks-Debug-output-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks-Release-input-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks-Release-input-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks-Release-output-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks-Release-output-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/Pods-Rick&amp;Morty/Pods-Rick&amp;Morty.release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/SwiftyJSON/SwiftyJSON-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Pods/Target Support Files/SwiftyJSON/SwiftyJSON.release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty.xcodeproj/xcshareddata/xcschemes/Rick&amp;Morty.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty.xcodeproj/xcshareddata/xcschemes/Rick&amp;Morty.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty.xcodeproj/xcuserdata/dasha.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty.xcodeproj/xcuserdata/dasha.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Application/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Application/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Application/SceneDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Application/SceneDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Helpers/String + Extension.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Helpers/String + Extension.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Models/Episode.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Models/Location.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Models/Person.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Services/DataFetcher.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Services/NetworkParser.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Services/NetworkService.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/CardsIcons/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/CardsIcons/gender.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/gender.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/CardsIcons/gender.imageset/icons8-плутон-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/gender.imageset/icons8-плутон-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/CardsIcons/tentacles.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/tentacles.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/CardsIcons/tentacles.imageset/icons8-щупальца-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/tentacles.imageset/icons8-щупальца-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/SEARCH.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/SEARCH.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/SEARCH.imageset/icons8-падающие-звезды-100-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/SEARCH.imageset/icons8-падающие-звезды-100-3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/marsian.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Big Trouble in Little Sanchez.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/marsian.imageset/icons8-марсианин-256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/person.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/One Crew Over the Crewcoo's Morty.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/person.imageset/icons8-покерфейс-100-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/planet.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/The Rickchurian Mortydate.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/planet.imageset/icons8-планета-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/planet.imageset/icons8-планета-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/starship.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/starship.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/FilterIcons/starship.imageset/icons8-космический-истребитель-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Heart/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Heart/heart.fill.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/heart.fill.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Heart/heart.fill.imageset/Subtract.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/heart.fill.imageset/Subtract.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Heart/heart.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/heart.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Heart/heart.imageset/Group 70.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/heart.imageset/Group 70.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Heart/hert.halfFill.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Episodes/Pilot.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Heart/hert.halfFill.imageset/Group 71.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-ios-filled-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/rick.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-ios-filled-100.imageset/icons8-ios-filled-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-астероид-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/asteroid.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-астероид-100.imageset/icons8-астероид-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/asteroid.imageset/icons8-астероид-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-бот-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/robot.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-бот-100.imageset/icons8-бот-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/robot.imageset/icons8-бот-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-вулканский-жест-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-вулканский-жест-100.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-вулканский-жест-100.imageset/icons8-вулканский-жест-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-вулканский-жест-100.imageset/icons8-вулканский-жест-101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-галактика-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/galaxy.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-галактика-100.imageset/icons8-галактика-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/galaxy.imageset/icons8-галактика-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-космический-шаттл-100-2.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-космический-шаттл-100-2.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-космический-шаттл-100-2.imageset/icons8-космический-шаттл-100-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-космический-шаттл-100-2.imageset/icons8-космический-шаттл-100-3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-космический-шаттл-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-космический-шаттл-100.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-космический-шаттл-100.imageset/icons8-космический-шаттл-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-космический-шаттл-100.imageset/icons8-космический-шаттл-101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-покерфейс-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-покерфейс-100.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-покерфейс-100.imageset/icons8-покерфейс-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-покерфейс-100.imageset/icons8-покерфейс-101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-ракета-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/rocket.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-ракета-100.imageset/icons8-ракета-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/Icons/rocket.imageset/icons8-ракета-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-рик-санчес-100.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-рик-санчес-100.imageset/icons8-рик-санчес-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-сломанный-робот-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-сломанный-робот-100.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-сломанный-робот-100.imageset/icons8-сломанный-робот-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-сломанный-робот-100.imageset/icons8-сломанный-робот-101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-страшное-дерево-100.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-error.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-страшное-дерево-100.imageset/icons8-страшное-дерево-100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Assets.xcassets/RickMortyIcons/icons8-error.imageset/icons8-страшное-дерево-100.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Supporting files/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/HeaderButtonsView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/HeaderButtonsView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Location/LocationCardView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Location &amp; Episode/LocationEpisodeCardView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Location/ResidentsCardView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Location &amp; Episode/ResidentsCardView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Person/PersonCardView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Person/PersonCardView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Person/PersonInformationView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Person/PersonInformationView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Person/PersonLocationView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Person/PersonLocationView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Person/PersonView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Cards/Person/PersonView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Global &amp; Helpers/ViewModifiers.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Global &amp; Helpers/ViewModifiers.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Home/Carousel/CarouselContentView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Home/Carousel/CarouselContentView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Home/Carousel/CarouselView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Home/Carousel/CarouselView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Home/HomeView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Home/HomeView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Home/LocationBlockView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Home/LocationBlockView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Search/CardsView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Search/CardsView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Search/FilterMenuView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Search/FilterMenuView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Search/SearchBarView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Search/SearchBarView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Search/SearchView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/Search/SearchView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/TabBar/TabBarRouterView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty/Views/TabBar/TabBarRouterView.swift" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Rick&amp;Morty" />
+  </component>
+  <component name="ProjectId" id="203PCajUmZr4A5xnaBgbKpBPH8m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="AppleRunConfiguration" factoryName="Application" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/Rick&amp;Morty" PASS_PARENT_ENVS_2="true" IS_LOCATION_SIMULATION_ALLOWED="true" LOCATION_SCENARIO_ID="com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier" LOCATION_SCENARIO_TYPE="1" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_PATH="$PROJECT_DIR$/Rick&amp;Morty/Rick&amp;Morty.xcodeproj/project.pbxproj" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58603a32-bbc2-430a-a5c0-94769d8bcd64" name="Changes" comment="" />
+      <created>1635270170781</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635270170781</updated>
+      <workItem from="1635270187793" duration="95000" />
+      <workItem from="1635270414810" duration="156000" />
+      <workItem from="1635270937539" duration="170000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

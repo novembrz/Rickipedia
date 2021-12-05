@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ProfilePageView: View {
     var body: some View {
@@ -46,11 +47,12 @@ struct ProfileView: View {
                         }
                     }
                     
-                    VStack(alignment: .leading, spacing: 16) {
+                    VStack(spacing: 16) {
                         SettingsButtonView(image: "galaxy", title: "Change password")
                         SettingsButtonView(image: "asteroid", title: "Notifications")
                         SettingsButtonView(image: "robot", title: "Language")
                         SettingsButtonView(image: "hand", title: "Support service")
+                        SettingsButtonView(image: "hand", title: "Customize widget")
                     }
                 }
                 
@@ -85,11 +87,16 @@ struct ProfileView_Previews: PreviewProvider {
 
 struct SettingsButtonView: View {
     
+    @AppStorage("widget", store: UserDefaults(suiteName: "group.novembrz.Rick-Morty"))
+    var widgetData = Data()
+    
     var image: String
     var title: String
     
     var body: some View {
-        Button {} label: {
+        Button {
+            buttonTapped()
+        } label: {
             HStack {
                 Image(image)
                     .resizable()
@@ -100,9 +107,21 @@ struct SettingsButtonView: View {
                     .padding(.leading, 7)
                     .font(.system(size: 18, weight: .medium))
             }
-            .frame(width: UIScreen.main.bounds.width - 32, height: 48)
+            .frame(width: UIScreen.main.bounds.width - 32, height: 48, alignment: .leading)
             .background(Color("GrayElementColor"))
             .cornerRadius(8)
         }
+    }
+    
+    private func buttonTapped() {
+        if title == "Customize widget" {
+            saveWidgetData(widget: WidgetProvider.myPerson)
+            
+        }
+    }
+    
+    private func saveWidgetData(widget: WidgetModel) {
+        guard let data = try? JSONEncoder().encode(widget) else { return }
+        widgetData = data
     }
 }

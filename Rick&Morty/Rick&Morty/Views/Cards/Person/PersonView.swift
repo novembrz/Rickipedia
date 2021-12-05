@@ -29,6 +29,7 @@ struct PersonView: View {
             VStack(spacing: 45) {
                 PersonInformationView(person: person)
                 PersonLocationView(origin: origin, location: location)
+                
                 Button {
                     StringsConvert().makeOneURL(urls: person.episode, type: .episode) { urls, count in
                         self.urls = urls

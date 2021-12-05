@@ -12,7 +12,7 @@ class NetworkManager {
     
     static func fetchData<T: Decodable>(urlString: String, completion: @escaping (T?) -> Void) {
         
-        guard let url = URL(string: urlString) else {return}
+        guard let url = URL(string: urlString) else { return }
         
         let session = URLSession.shared
         
@@ -30,7 +30,7 @@ class NetworkManager {
     
     static func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
         let decoder = JSONDecoder()
-        guard let data = from else {return nil}
+        guard let data = from else { return nil }
         
         do {
             let objects = try decoder.decode(type.self, from: data)
